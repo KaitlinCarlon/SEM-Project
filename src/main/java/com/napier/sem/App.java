@@ -78,9 +78,9 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT id, Name, CountryCode, District, Population "
+                    "SELECT ID, Name, CountryCode, District, Population "
                             + "FROM city "
-                            + "WHERE id_no = " + ID;
+                            + "WHERE ID = " + ID;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
@@ -88,7 +88,7 @@ public class App
             if (rset.next())
             {
                 City emp = new City();
-                emp.id_no = rset.getInt("id");
+                emp.id_no = rset.getInt("ID");
                 emp.country_name = rset.getString("Name");
                 emp.county_code = rset.getString("CountryCode");
                 emp.discrict = rset.getString("District");

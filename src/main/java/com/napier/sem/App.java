@@ -70,7 +70,7 @@ public class App
         }
     }
 
-    public City getEmployee(int ID)
+    public City getCity(int ID)
     {
         try
         {
@@ -101,12 +101,12 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get city details");
             return null;
         }
     }
 
-    public void displayEmployee(City emp)
+    public void displayCity(City emp)
     {
         if (emp != null)
         {
@@ -131,9 +131,9 @@ public class App
         a.connect();
 
         // Get Employee
-        City emp = a.getEmployee(1);
+        City emp = a.getCity(1);
         // Display results
-        a.displayEmployee(emp);
+        a.displayCity(emp);
 
         // Disconnect from database
         a.disconnect();

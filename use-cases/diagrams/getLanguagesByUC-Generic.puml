@@ -10,7 +10,7 @@ rectangle "Create a report of languages by population in (N)" {
     usecase UCb as "Create report"
 
     UR - UCG
-    UC8 <.. UCa : extend
+    UCG <.. UCa : extend
     UCa ..> UCb : include
     UCG - Database
 }

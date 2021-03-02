@@ -1,3 +1,16 @@
+/*
+This is the Main App which connect to the World Database
+This is a sample connection to be used as reference for the next issues
+Divided into this methods:
+connect : for the connection to the database
+disconnect : to drop the communication whit the database
+getCity: which consent to retrieve the data from the World Database
+displayCity: print the result of the method getCity in the terminal
+main: execution of the methods to be compiled
+
+@author (Giovanmaria Scanu)
+ */
+
 package com.napier.sem;
 
 import java.sql.*;
@@ -108,8 +121,10 @@ public class App
 
     public void displayCity(City emp)
     {
+        //if the data is present
         if (emp != null)
         {
+            //Show the result on screen
             System.out.println(
                     emp.id_no+ " "
                             + emp.country_name + " "

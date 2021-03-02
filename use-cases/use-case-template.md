@@ -1,14 +1,14 @@
-# USE CASE: 4 Produce a Report on the Salary of Employees of a Given Role
+# USE CASE: 8 Produce a Report of all the countries in the world organised by largest population to smallest
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an *HR advisor* I want *to produce a report on the salary of employees of a given role* so that *I can support financial reporting of the organisation.*
+As a United Nations researcher, I would like to produce a report of all the countries in the world organised by largest population to smallest so that I can support population tracking.
 
 ### Scope
 
-Company.
+Report List Country in the World - largest to smallest.
 
 ### Level
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+Connection to the world Database.
 
 ### Success End Condition
 
-A report is available for HR to provide to finance.
+A report is available for UN researcher.
 
 ### Failed End Condition
 
@@ -28,28 +28,504 @@ No report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+UN researcher.
 
 ### Trigger
 
-A request for finance information is sent to HR.
+A request for UN information request.
 
-## MAIN SUCCESS SCENARIO
+## Description
 
-1. Finance request salary information for a given role.
-2. HR advisor captures name of the role to get salary information for.
-3. HR advisor extracts current salary information of all employees of the given role.
-4. HR advisor provides report to finance.
-
-## EXTENSIONS
-
-3. **Role does not exist**:
-    1. HR advisor informs finance no role exists.
+1. UN request population information for all the countries in the world organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
 
 ## SUB-VARIATIONS
 
 None.
 
-## SCHEDULE
 
-**DUE DATE**: Release 1.0
+# USE CASE: 9 Produce a Report of all the countries in a continent organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of all the countries in a continent organised by largest population to smallest so that I can support population tracking.
+
+### Scope
+
+Report List Country in the Region - largest to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for all the countries in a continent organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 10 Produce a Report of all the countries in a region organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of all the countries in a region organised by largest population to smallest so that I can support population tracking.
+
+### Scope
+
+Report List Country in the Region - largest to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for all the countries in a region organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 11 Produce a Report of the top N populated countries in the world
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the top N populated countries in the world where N is provided by me so that I can support population tracking.
+
+### Scope
+
+Report List of the top N populated countries in the world.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+The Top N Number.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for the top N populated countries in the world.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 12 Produce a Report of the top N populated countries in a continent
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the top N populated countries in a continent where N is provided by me so that I can support population tracking.
+
+### Scope
+
+Report List of the top N populated countries in a continent.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+The Top N Number.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for the top N populated countries in a continent.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 13 Produce a Report of the top N populated countries in a region
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the top N populated countries in a region where N is provided by me so that I can support population tracking.
+
+### Scope
+
+Report List of the top N populated countries in a region.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+The Top N Number.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for the top N populated countries in a region.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 14 Produce a Report of all cities in the world organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the all the cities in the world organised by largest population to smallest. so that I can support population tracking.
+
+### Scope
+
+Report List of all the cities in the world organised by largest population to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for all the cities in the world organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 15 Produce a Report of all the cities in a continent organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the all the cities in a continent organised by largest population to smallest. so that I can support population tracking.
+
+### Scope
+
+Report List of the all the cities in a continent organised by largest population to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for all the cities in a continent organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 16 Produce a Report of the all the cities in a region organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the all the cities in a region organised by largest population to smallest. so that I can support population tracking.
+
+### Scope
+
+Report List of the all the cities in a region organised by largest population to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for the all the cities in a region organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 17 Produce a Report of the all the cities in a country organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the all the cities in a country organised by largest population to smallest. so that I can support population tracking.
+
+### Scope
+
+Report List of the all the cities in a country organised by largest population to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for all the cities in a country organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+
+# USE CASE: 18 Produce a Report of the all the cities in a district organised by largest population to smallest
+
+## CHARACTERISTIC INFORMATION
+
+### Goal in Context
+
+As a United Nations researcher, I would like to produce a report of the all the cities in a district organised by largest population to smallest so that I can support population tracking.
+
+### Scope
+
+Report List of the all the cities in a district organised by largest population to smallest.
+
+### Level
+
+Primary task.
+
+### Preconditions
+
+Connection to the world Database.
+
+### Success End Condition
+
+A report is available for UN researcher.
+
+### Failed End Condition
+
+No report is produced.
+
+### Primary Actor
+
+UN researcher.
+
+### Trigger
+
+A request for UN information request.
+
+## Description
+
+1. UN request population information for the all the cities in a district organised by largest population to smallest.
+2. UN researcher captures the specific area and get information for.
+3. UN researcher extracts population information from the Database.
+4. UN researcher provides report to UN.
+
+## SUB-VARIATIONS
+
+None.
+
+

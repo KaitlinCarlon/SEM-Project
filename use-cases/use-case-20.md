@@ -1,14 +1,14 @@
-# USE CASE: 19 Produce a Report of the top N populated cities in the world
+# USE CASE: 20 Produce a Report of the top N populated cities in a continent
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As a United Nations researcher, I would like to produce a report of the top N populated cities in the world where N is provided by me so that I can support population tracking.
+As a United Nations researcher, I would like to produce a report of the top N populated cities in a continent where N is provided by me so that I can support population tracking.
 
 ### Scope
 
-Report List of the top N populated cities in the world.
+Report List of the top N populated cities in a continent.
 
 ### Level
 
@@ -37,7 +37,7 @@ A request for UN information request.
 
 ## Description
 
-1. UN request population information for the top N populated cities in the world.
+1. UN request population information for the top N populated cities in a continent.
 2. UN researcher captures the specific area and get information for.
 3. UN researcher extracts population information from the Database.
 4. UN researcher provides report to UN.

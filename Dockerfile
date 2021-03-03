@@ -1,5 +1,5 @@
 #Define docker image using latest jdk image
 FROM openjdk:latest
-COPY ./target/classes/com /tmp/com
+COPY ./target/SEM-Project-0.1.0.3-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "com.napier.sem.App"]
+ENTRYPOINT ["java", "-jar", "SEM-Project-0.1.0.3-jar-with-dependencies.jar"]

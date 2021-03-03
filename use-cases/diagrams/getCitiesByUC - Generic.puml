@@ -1,0 +1,18 @@
+@startuml
+
+actor UR as "UN researcher"
+
+rectangle Database
+
+rectangle "Create a report on cities by population in (N) " {
+    usecase UCG as "Get cities in (N) "
+    usecase UCa as "Select (N)"
+    usecase UCb as "Create report"
+
+    UR - UCG
+    UCG <.. UCa : extend
+    UCa ..> UCb : include
+    UCG - Database
+}
+
+@enduml

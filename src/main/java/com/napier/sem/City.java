@@ -32,7 +32,7 @@ public class City {
     /**
      * City District
      */
-    public String discrict;
+    public String district;
 
     /**
      * City Population

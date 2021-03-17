@@ -104,7 +104,7 @@ public class App
                 emp.id_no = rset.getInt("ID");
                 emp.country_name = rset.getString("Name");
                 emp.county_code = rset.getString("CountryCode");
-                emp.discrict = rset.getString("District");
+                emp.district = rset.getString("District");
                 emp.population = rset.getInt("Population");
                 return emp;
             }
@@ -129,7 +129,7 @@ public class App
                     emp.id_no+ " "
                             + emp.country_name + " "
                             + emp.county_code + "\n"
-                            + emp.discrict + "\n"
+                            + emp.district + "\n"
                             + emp.population + "\n"
                             );
         }

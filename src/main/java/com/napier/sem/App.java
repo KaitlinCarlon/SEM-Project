@@ -135,7 +135,14 @@ public class App
         }
     }
 
-
+    public static void displayMenu()
+    {
+        System.out.println("Enter Selection\n");
+        System.out.println("1. Country Report.\n");
+        System.out.println("2. City Report.\n");
+        System.out.println("3. Capital City Report.\n");
+        System.out.println("4. Population Report.\n");
+    }
 
     public static void main(String[] args)
     {

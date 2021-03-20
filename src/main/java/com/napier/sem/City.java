@@ -15,29 +15,23 @@ import java.sql.Statement;
 public class City {
 
     /**
-     * City ID
+     * City Name
      */
-    public int id_no;
-
-    /**
-     * City Country Name
-     */
-    public String country_name;
+    public String city_name;
 
     /**
      * City Country Code
      */
-    public String county_code;
+    public String city_country_code;
 
     /**
      * City District
      */
-    public String discrict;
+    public String city_district;
 
     /**
      * City Population
      */
-    public int population;
-
+    public int city_population;
 
 }

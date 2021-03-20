@@ -83,7 +83,7 @@ public class App
         }
     }
 
-    public Country getCountry(int ID)
+    public void countryReport()
     {
         try
         {
@@ -98,7 +98,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
             // Check one is returned
-            if (rset.next())
+            while (rset.next())
             {
                 Country emp = new Country();
                 emp.country_code = rset.getString("Code");
@@ -106,16 +106,24 @@ public class App
                 emp.country_continent = rset.getString("Continent");
                 emp.region = rset.getString("Region");
                 emp.population = rset.getInt("Population");
-                return emp;
-            }
-            else
-                return null;
+
+
+                //if the data is present
+
+                    //Show the result on screen
+                    System.out.println(
+                            emp.country_code+ " "
+                                    + emp.country_name + " "
+                                    + emp.country_continent + "\n"
+                                    + emp.region + "\n"
+                                    + emp.population + "\n"
+                    );
+                }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get city details");
-            return null;
         }
     }
 
@@ -153,9 +161,9 @@ public class App
         a.connect();
 
         // Get Employee
-        Country emp = a.getCountry();
+         a.countryReport();
         // Display results
-        a.displayCountry(emp);
+        //a.displayCountry(emp);
 
         // Disconnect from database
         a.disconnect();

@@ -126,7 +126,7 @@ public class App
             System.out.println("Failed to get city details");
         }
     }
-
+/**
     public void displayCountry(Country emp)
     {
         //if the data is present
@@ -142,7 +142,7 @@ public class App
                             );
         }
     }
-
+*/
     public static void displayMenu()
     {
         System.out.println("Enter Selection\n");

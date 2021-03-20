@@ -83,7 +83,7 @@ public class App
         }
     }
 
-    public City getCity(int ID)
+    public Country getCountry(int ID)
     {
         try
         {
@@ -91,20 +91,20 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT ID, Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "WHERE ID = " + ID;
+                    "SELECT Code, Name, Continent, Region, Population, Capital "
+                            + "FROM country "
+                            + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
             // Check one is returned
             if (rset.next())
             {
-                City emp = new City();
-                emp.id_no = rset.getInt("ID");
+                Country emp = new Country();
+                emp.country_code = rset.getString("Code");
                 emp.country_name = rset.getString("Name");
-                emp.county_code = rset.getString("CountryCode");
-                emp.discrict = rset.getString("District");
+                emp.country_continent = rset.getString("Continent");
+                emp.region = rset.getString("Region");
                 emp.population = rset.getInt("Population");
                 return emp;
             }
@@ -119,17 +119,17 @@ public class App
         }
     }
 
-    public void displayCity(City emp)
+    public void displayCountry(Country emp)
     {
         //if the data is present
         if (emp != null)
         {
             //Show the result on screen
             System.out.println(
-                    emp.id_no+ " "
+                    emp.country_code+ " "
                             + emp.country_name + " "
-                            + emp.county_code + "\n"
-                            + emp.discrict + "\n"
+                            + emp.country_continent + "\n"
+                            + emp.region + "\n"
                             + emp.population + "\n"
                             );
         }
@@ -153,9 +153,9 @@ public class App
         a.connect();
 
         // Get Employee
-        City emp = a.getCity(1);
+        Country emp = a.getCountry();
         // Display results
-        a.displayCity(emp);
+        a.displayCountry(emp);
 
         // Disconnect from database
         a.disconnect();

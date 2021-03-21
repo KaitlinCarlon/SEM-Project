@@ -100,23 +100,23 @@ public class App
             // Check one is returned
             while (rset.next())
             {
-                Country emp = new Country();
-                emp.country_code = rset.getString("Code");
-                emp.country_name = rset.getString("Name");
-                emp.country_continent = rset.getString("Continent");
-                emp.region = rset.getString("Region");
-                emp.population = rset.getInt("Population");
+                Country country = new Country();
+                country.country_code = rset.getString("Code");
+                country.country_name = rset.getString("Name");
+                country.country_continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
 
 
                 //if the data is present
 
                     //Show the result on screen
                     System.out.println(
-                            emp.country_code+ " "
-                                    + emp.country_name + " "
-                                    + emp.country_continent + "\n"
-                                    + emp.region + "\n"
-                                    + emp.population + "\n"
+                            country.country_code+ " "
+                                    + country.country_name + " "
+                                    + country.country_continent + " "
+                                    + country.region + " "
+                                    + country.population + "\n"
                     );
                 }
         }

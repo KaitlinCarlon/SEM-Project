@@ -83,7 +83,7 @@ public class App
         }
     }
 
-    public City getCity(int ID)
+    public void countryReport()
     {
         try
         {
@@ -91,51 +91,66 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT ID, Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "WHERE ID = " + ID;
+                    "SELECT Code, Name, Continent, Region, Population, Capital "
+                            + "FROM country "
+                            + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
             // Check one is returned
-            if (rset.next())
+            while (rset.next())
             {
-                City emp = new City();
-                emp.id_no = rset.getInt("ID");
-                emp.country_name = rset.getString("Name");
-                emp.county_code = rset.getString("CountryCode");
-                emp.discrict = rset.getString("District");
-                emp.population = rset.getInt("Population");
-                return emp;
-            }
-            else
-                return null;
+                Country country = new Country();
+                country.country_code = rset.getString("Code");
+                country.country_name = rset.getString("Name");
+                country.country_continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+
+
+                //if the data is present
+
+                    //Show the result on screen
+                    System.out.println(
+                            country.country_code+ " "
+                                    + country.country_name + " "
+                                    + country.country_continent + " "
+                                    + country.region + " "
+                                    + country.population + "\n"
+                    );
+                }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
-            return null;
+            System.out.println("Failed to get country details");
         }
     }
-
-    public void displayCity(City emp)
+/**
+    public void displayCountry(Country emp)
     {
         //if the data is present
         if (emp != null)
         {
             //Show the result on screen
             System.out.println(
-                    emp.id_no+ " "
+                    emp.country_code+ " "
                             + emp.country_name + " "
-                            + emp.county_code + "\n"
-                            + emp.discrict + "\n"
+                            + emp.country_continent + "\n"
+                            + emp.region + "\n"
                             + emp.population + "\n"
                             );
         }
     }
-
-
+*/
+    public static void displayMenu()
+    {
+        System.out.println("Enter Selection\n");
+        System.out.println("1. Country Report.\n");
+        System.out.println("2. City Report.\n");
+        System.out.println("3. Capital City Report.\n");
+        System.out.println("4. Population Report.\n");
+    }
 
     public static void main(String[] args)
     {
@@ -146,9 +161,9 @@ public class App
         a.connect();
 
         // Get Employee
-        City emp = a.getCity(1);
+         a.countryReport();
         // Display results
-        a.displayCity(emp);
+        //a.displayCountry(emp);
 
         // Disconnect from database
         a.disconnect();

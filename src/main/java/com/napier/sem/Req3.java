@@ -1,19 +1,18 @@
 package com.napier.sem;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Req1 {
-
+public class Req3 {
     private DataConnect a;
 
-    Req1(DataConnect dataConnect){
+    Req3(DataConnect dataConnect){
         a = dataConnect;
     }
 
     public void countryReport()
     {
+        String inputRegion = "'Southern Europe'";
         try
         {
             // Create an SQL statement
@@ -22,6 +21,7 @@ public class Req1 {
             String strSelect =
                     "SELECT Code, Name, Continent, Region, Population, Capital "
                             + "FROM country "
+                            + "WHERE region = " + inputRegion + ""
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);

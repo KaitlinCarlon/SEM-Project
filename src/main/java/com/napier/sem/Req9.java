@@ -9,17 +9,29 @@ public class Req9 {
 
     Req9(DataConnect dataConnect){ a = dataConnect; }
 
-    public void cityReport()
+    public void cityReport(int limit)
     {
         try
         {
+            String Region = "Caribbean";
             // Create an SQL statement
             Statement stmt = a.con2().createStatement();
             // Create string for SQL statement
-            String strSelect =
-                    "SELECT city.Name, CountryCode, District, city.Population FROM city " +
-                            "JOIN country ON CountryCode = Code WHERE Region = 'Caribbean' " +
-                            "ORDER BY city.Population DESC";
+            String strSelect;
+            if(limit == 0){
+                strSelect =
+                        "SELECT city.Name, CountryCode, District, city.Population FROM city " +
+                                "JOIN country ON CountryCode = Code WHERE Region = '"+ Region +"' " +
+                                "ORDER BY city.Population DESC";
+            }
+            else{
+                strSelect =
+                        "SELECT city.Name, CountryCode, District, city.Population FROM city " +
+                                "JOIN country ON CountryCode = Code WHERE Region = '"+ Region +"' " +
+                                "ORDER BY city.Population DESC "
+                                + "LIMIT " + limit + "";
+            }
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.

@@ -9,15 +9,25 @@ public class Req11 {
 
     Req11(DataConnect dataConnect){ a = dataConnect; }
 
-    public void cityReport()
+    public void cityReport(int limit)
     {
         try
         {
+            String District = "Buenos Aires";
             // Create an SQL statement
             Statement stmt = a.con2().createStatement();
             // Create string for SQL statement
-            String strSelect =
-                    "SELECT * FROM city WHERE District = 'Buenos Aires' ORDER BY Population DESC";
+            String strSelect;
+            if(limit == 0){
+                strSelect =
+                        "SELECT * FROM city WHERE District = '"+ District +"' ORDER BY Population DESC";
+            }
+            else{
+                strSelect =
+                        "SELECT * FROM city WHERE District = '"+ District +"' ORDER BY Population DESC "
+                        + "LIMIT " + limit + "";
+            }
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.

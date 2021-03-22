@@ -9,18 +9,31 @@ public class Req10 {
 
     Req10(DataConnect dataConnect){ a = dataConnect; }
 
-    public void cityReport()
+    public void cityReport(int limit)
     {
         try
         {
+            String Country = "AFG";
             // Create an SQL statement
             Statement stmt = a.con2().createStatement();
             // Create string for SQL statement
-            String strSelect =
-                    "SELECT Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "WHERE CountryCode = 'AFG'"
-                            + "ORDER BY Population DESC";
+            String strSelect;
+            if(limit == 0){
+                strSelect =
+                        "SELECT Name, CountryCode, District, Population "
+                                + "FROM city "
+                                + "WHERE CountryCode = '"+ Country + "' "
+                                + "ORDER BY Population DESC";
+            }
+            else{
+                strSelect =
+                        "SELECT Name, CountryCode, District, Population "
+                                + "FROM city "
+                                + "WHERE CountryCode = '"+ Country + "' "
+                                + "ORDER BY Population DESC "
+                                + "LIMIT " + limit + "";
+            }
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.

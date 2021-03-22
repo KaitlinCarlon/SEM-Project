@@ -10,19 +10,30 @@ public class Req3 {
         a = dataConnect;
     }
 
-    public void countryReport()
+    public void countryReport(int limit)
     {
         String inputRegion = "'Southern Europe'";
         try
         {
             // Create an SQL statement
             Statement stmt = a.con2().createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT Code, Name, Continent, Region, Population, Capital "
-                            + "FROM country "
-                            + "WHERE region = " + inputRegion + ""
-                            + "ORDER BY Population DESC";
+            String strSelect;
+            if(limit == 0) {
+                // Create string for SQL statement
+                strSelect =
+                        "SELECT Code, Name, Continent, Region, Population, Capital "
+                                + "FROM country "
+                                + "WHERE region = " + inputRegion + ""
+                                + "ORDER BY Population DESC";
+            } else {
+                // Create string for SQL statement
+                strSelect =
+                        "SELECT Code, Name, Continent, Region, Population, Capital "
+                                + "FROM country "
+                                + "WHERE region = " + inputRegion + ""
+                                + "ORDER BY Population DESC "
+                                + "LIMIT " + limit + "";
+            }
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country if valid.

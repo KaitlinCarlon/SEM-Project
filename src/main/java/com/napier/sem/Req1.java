@@ -20,12 +20,13 @@ public class Req1 {
             Statement stmt = a.con2().createStatement();
             String strSelect;
             if(limit == 0) {
-
+                //create string for sql statement
                 strSelect =
                         "SELECT Code, Name, Continent, Region, Population, Capital "
                                 + "FROM country "
                                 + "ORDER BY Population DESC";
             } else {
+                //create string for sql statement
                 strSelect =
                         "SELECT Code, Name, Continent, Region, Population, Capital "
                                 + "FROM country "

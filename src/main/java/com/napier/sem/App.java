@@ -40,13 +40,15 @@ public class App
 
         a.first.countryReport(0);
         a.first.countryReport(3);
-        a.second.countryReport();
-        a.third.countryReport();
-        a.seven.cityReport();
-        a.eight.cityReport();
-        a.nine.cityReport();
-        a.ten.cityReport();
-        a.eleven.cityReport();
+        a.second.countryReport(0);
+        a.second.countryReport(3);
+        a.third.countryReport(0);
+        a.third.countryReport(3);
+       // a.seven.cityReport();
+        //a.eight.cityReport();
+        //a.nine.cityReport();
+       // a.ten.cityReport();
+       // a.eleven.cityReport();
 
 
         // Disconnect from database

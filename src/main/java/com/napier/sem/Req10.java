@@ -3,11 +3,11 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Req7 {
+public class Req10 {
 
     private DataConnect a;
 
-    Req7(DataConnect dataConnect){ a = dataConnect; }
+    Req10(DataConnect dataConnect){ a = dataConnect; }
 
     public void cityReport()
     {
@@ -19,10 +19,11 @@ public class Req7 {
             String strSelect =
                     "SELECT Name, CountryCode, District, Population "
                             + "FROM city "
+                            + "WHERE CountryCode = 'AFG'"
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new city if valid.
+            // Return new employee if valid.
             // Check one is returned
             while (rset.next())
             {

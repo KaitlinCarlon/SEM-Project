@@ -40,10 +40,10 @@ public class App
 
         a.first.countryReport(0);
         a.first.countryReport(3);
-        a.second.countryReport();
-
-        a.third.countryReport();
-
+        a a.second.countryReport(0);
+        a.second.countryReport(3);
+        a.third.countryReport(0);
+        a.third.countryReport(3);
         a.seven.cityReport(0);
         a.seven.cityReport(3);
         a.eight.cityReport(0);
@@ -54,7 +54,6 @@ public class App
         a.ten.cityReport(3);
         a.eleven.cityReport(0);
         a.eleven.cityReport(3);
-
 
         // Disconnect from database
         a.a.disconnect();

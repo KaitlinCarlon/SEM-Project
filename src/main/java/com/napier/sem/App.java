@@ -26,6 +26,7 @@ public class App
     Req8 eight = new Req8(a);
     Req9 nine = new Req9(a);
     Req10 ten = new Req10(a);
+    Req11 eleven = new Req11(a);
 
     public static void main(String[] args)
     {
@@ -45,7 +46,8 @@ public class App
         a.eight.cityReport();
         a.nine.cityReport();
         a.ten.cityReport();
- 
+        a.eleven.cityReport();
+
 
         // Disconnect from database
         a.a.disconnect();

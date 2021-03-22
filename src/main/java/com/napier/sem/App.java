@@ -33,10 +33,9 @@ public class App
         a.a.connect();
 
         // Get Data
-       // a.first.countryReport();
-       // a.seven.cityReport();
+        a.first.countryReport();
         a.second.countryReport();
-
+        a.seven.cityReport();
         // Disconnect from database
         a.a.disconnect();
     }

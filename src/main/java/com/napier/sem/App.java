@@ -41,12 +41,19 @@ public class App
         a.first.countryReport(0);
         a.first.countryReport(3);
         a.second.countryReport();
+
         a.third.countryReport();
-        a.seven.cityReport();
-        a.eight.cityReport();
-        a.nine.cityReport();
-        a.ten.cityReport();
-        a.eleven.cityReport();
+
+        a.seven.cityReport(0);
+        a.seven.cityReport(3);
+        a.eight.cityReport(0);
+        a.eight.cityReport(3);
+        a.nine.cityReport(0);
+        a.nine.cityReport(3);
+        a.ten.cityReport(0);
+        a.ten.cityReport(3);
+        a.eleven.cityReport(0);
+        a.eleven.cityReport(3);
 
 
         // Disconnect from database

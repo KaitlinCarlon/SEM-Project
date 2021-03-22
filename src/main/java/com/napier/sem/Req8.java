@@ -17,10 +17,9 @@ public class Req8 {
             Statement stmt = a.con2().createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "WHERE CountryCode = 'AFG'"
-                            + "ORDER BY Population DESC";
+                    "SELECT city.Name, CountryCode, District, city.Population FROM city " +
+                            "JOIN country ON CountryCode = Code WHERE Continent = 'North America' " +
+                            "ORDER BY city.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.

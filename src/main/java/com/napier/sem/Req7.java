@@ -7,9 +7,7 @@ public class Req7 {
 
     private DataConnect a;
 
-    Req7(DataConnect dataConnect){
-        a = dataConnect;
-    }
+    Req7(DataConnect dataConnect){ a = dataConnect; }
 
     public void cityReport()
     {

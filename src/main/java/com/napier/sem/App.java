@@ -36,13 +36,16 @@ public class App
         a.a.connect();
 
         // Get Data
-        a.first.countryReport();       
+
+        a.first.countryReport(0);
+        a.first.countryReport(3);
         a.second.countryReport();
         a.third.countryReport();
         a.seven.cityReport();
         a.eight.cityReport();
         a.nine.cityReport();
         a.ten.cityReport();
+ 
 
         // Disconnect from database
         a.a.disconnect();

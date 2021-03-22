@@ -12,20 +12,29 @@ public class Req1 {
         a = dataConnect;
     }
 
-    public void countryReport()
+    public void countryReport(int limit)
     {
         try
         {
             // Create an SQL statement
             Statement stmt = a.con2().createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT Code, Name, Continent, Region, Population, Capital "
-                            + "FROM country "
-                            + "ORDER BY Population DESC";
+            String strSelect;
+            if(limit == 0) {
+
+                strSelect =
+                        "SELECT Code, Name, Continent, Region, Population, Capital "
+                                + "FROM country "
+                                + "ORDER BY Population DESC";
+            } else {
+                strSelect =
+                        "SELECT Code, Name, Continent, Region, Population, Capital "
+                                + "FROM country "
+                                + "ORDER BY Population DESC "
+                                + "LIMIT " + limit + "";
+            }
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
+            // Return new country if valid.
             // Check one is returned
             while (rset.next())
             {

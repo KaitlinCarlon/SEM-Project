@@ -18,181 +18,10 @@ import java.sql.*;
 public class App
 {
 
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
+    DataConnect a = new DataConnect();
+    Req1 first = new Req1(a);
+    Req7 seven = new Req7(a);
 
-    /**
-     * Connect to the MySQL database.
-     */
-    public void connect()
-    {
-        try
-        {
-            // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
-        }
-
-        int retries = 10;
-        for (int i = 0; i < retries; ++i)
-        {
-            System.out.println("Connecting to database...");
-            try
-            {
-                // Wait a bit for db to start
-                Thread.sleep(30000);
-                // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "group9");
-                System.out.println("Successfully connected");
-                break;
-            }
-            catch (SQLException sqle)
-            {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                System.out.println(sqle.getMessage());
-            }
-            catch (InterruptedException ie)
-            {
-                System.out.println("Thread interrupted? Should not happen.");
-            }
-        }
-    }
-
-    /**
-     * Disconnect from the MySQL database.
-     */
-    public void disconnect()
-    {
-        if (con != null)
-        {
-            try
-            {
-                // Close connection
-                con.close();
-            }
-            catch (Exception e)
-            {
-                System.out.println("Error closing connection to database");
-            }
-        }
-    }
-
-    public void countryReport()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT Code, Name, Continent, Region, Population, Capital "
-                            + "FROM country "
-                            + "ORDER BY Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
-            while (rset.next())
-            {
-                Country country = new Country();
-                country.country_code = rset.getString("Code");
-                country.country_name = rset.getString("Name");
-                country.country_continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-
-
-                //if the data is present
-
-                    //Show the result on screen
-                    System.out.println(
-                            country.country_code+ " "
-                                    + country.country_name + " "
-                                    + country.country_continent + " "
-                                    + country.region + " "
-                                    + country.population + "\n"
-                    );
-                }
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
-        }
-    }
-
-    public void cityReport()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "ORDER BY Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
-            while (rset.next())
-            {
-                City city = new City();
-                city.city_name = rset.getString("Name");
-                city.city_country_code = rset.getString("CountryCode");
-                city.city_district = rset.getString("District");
-                city.city_population = rset.getInt("Population");
-
-
-                //if the data is present
-
-                //Show the result on screen
-                System.out.println(
-                        city.city_name+ " "
-                                + city.city_country_code + " "
-                                + city.city_district + " "
-                                + city.city_population + "\n"
-                );
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
-        }
-    }
-/**
-    public void displayCountry(Country emp)
-    {
-        //if the data is present
-        if (emp != null)
-        {
-            //Show the result on screen
-            System.out.println(
-                    emp.country_code+ " "
-                            + emp.country_name + " "
-                            + emp.country_continent + "\n"
-                            + emp.region + "\n"
-                            + emp.population + "\n"
-                            );
-        }
-    }
-*/
-    public static void displayMenu()
-    {
-        System.out.println("Enter Selection\n");
-        System.out.println("1. Country Report.\n");
-        System.out.println("2. City Report.\n");
-        System.out.println("3. Capital City Report.\n");
-        System.out.println("4. Population Report.\n");
-    }
 
     public static void main(String[] args)
     {
@@ -200,15 +29,13 @@ public class App
         App a = new App();
 
         // Connect to database
-        a.connect();
+        a.a.connect();
 
-        // Get Employee
-         a.countryReport();
-         a.cityReport();
-        // Display results
-        //a.displayCountry(emp);
+        // Get Data
+        a.first.countryReport();
+        a.seven.cityReport();
 
         // Disconnect from database
-        a.disconnect();
+        a.a.disconnect();
     }
 }

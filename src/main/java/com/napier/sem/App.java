@@ -21,6 +21,7 @@ public class App
     DataConnect a = new DataConnect();
     Req1 first = new Req1(a);
     Req7 seven = new Req7(a);
+    Req11 eleven = new Req11(a);
 
 
     public static void main(String[] args)
@@ -34,6 +35,7 @@ public class App
         // Get Data
         a.first.countryReport();
         a.seven.cityReport();
+        a.eleven.cityReport();
 
         // Disconnect from database
         a.a.disconnect();

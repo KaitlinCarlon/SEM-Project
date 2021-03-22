@@ -24,6 +24,7 @@ public class App
     Req3 third = new Req3(a);   
     Req7 seven = new Req7(a);
     Req8 eight = new Req8(a);
+    Req9 nine = new Req9(a);
 
 
 
@@ -41,6 +42,7 @@ public class App
         a.third.countryReport();
         a.seven.cityReport();
         a.eight.cityReport();
+        a.nine.cityReport();
 
         // Disconnect from database
         a.a.disconnect();

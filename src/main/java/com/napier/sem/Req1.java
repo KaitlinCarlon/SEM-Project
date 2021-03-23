@@ -1,8 +1,24 @@
 package com.napier.sem;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+/**
+ * Requirement 1 and 4 of the SEM Coursework
+ * This Class Produce 2 Report:
+ * Req 1 Report: List Country in the World - largest to smallest.
+ * Req 4 Report: List Country in the World - largest to smallest with limit rows
+ *
+ * Function:
+ * Init passing the dataConnect from the main connection
+ * Method countryReport giving instruction for limitation or not
+ * Retrieve data
+ * Rebuild Class
+ * Print Data to the Terminal
+ *
+ * @author Giovanmaria Scanu
+ * @developer Matthew
+ */
 
 public class Req1 {
 
@@ -39,23 +55,16 @@ public class Req1 {
             // Check one is returned
             while (rset.next())
             {
-                Country country = new Country();
-                country.country_code = rset.getString("Code");
-                country.country_name = rset.getString("Name");
-                country.country_continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-
-
+                Country country = new Country(rset.getString("Code"), rset.getString("Name"), rset.getString("Continent"), rset.getString("Region"), rset.getInt("Population"), null);
                 //if the data is present
 
                 //Show the result on screen
                 System.out.println(
-                        country.country_code+ " "
-                                + country.country_name + " "
-                                + country.country_continent + " "
-                                + country.region + " "
-                                + country.population + "\n"
+                        country.Country_code()+ " "
+                                + country.Country_name() + " "
+                                + country.Country_continent() + " "
+                                + country.Region() + " "
+                                + country.Population() + "\n"
                 );
             }
         }

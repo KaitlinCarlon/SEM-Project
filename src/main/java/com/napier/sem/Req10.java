@@ -3,6 +3,23 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Requirement 10 and 15 of the SEM Coursework
+ * This Class Produce 2 Report:
+ * Req 10 Report: List all the cities in the country organised by largest population to smallest.
+ * Req 15 Report: List all the cities in the country organised by largest population to smallest with limit rows
+ *
+ * Function:
+ * Init passing the dataConnect from the main connection
+ * Method cityReport giving instruction for limitation or not
+ * Retrieve data
+ * Rebuild Class
+ * Print Data to the Terminal
+ *
+ * @author Giovanmaria Scanu
+ * @developer  Giovanmaria Scanu
+ */
+
 public class Req10 {
 
     private DataConnect a;
@@ -40,21 +57,16 @@ public class Req10 {
             // Check one is returned
             while (rset.next())
             {
-                City city = new City();
-                city.city_name = rset.getString("Name");
-                city.city_country_code = rset.getString("CountryCode");
-                city.city_district = rset.getString("District");
-                city.city_population = rset.getInt("Population");
-
+                City city = new City(rset.getString("Name"), rset.getString("CountryCode"), rset.getString("District"), rset.getInt("Population")  );
 
                 //if the data is present
 
                 //Show the result on screen
                 System.out.println(
-                        city.city_name+ " "
-                                + city.city_country_code + " "
-                                + city.city_district + " "
-                                + city.city_population + "\n"
+                        city.City_name()+ " "
+                                + city.City_country_name() + " "
+                                + city.City_district() + " "
+                                + city.City_population() + "\n"
                 );
             }
         }

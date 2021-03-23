@@ -1,37 +1,51 @@
-/*
-This is the City Class Containing all the Data available
-from the World Database
-
-For more information use the Database Tables.PNG in the Database Folder
-
-@author (Giovanmaria Scanu)
- */
-
 package com.napier.sem;
 
-import java.sql.ResultSet;
-import java.sql.Statement;
+/**
+ * This is the City Class Containing all the Data available
+ * from the World Database
+
+ * For more information use the Database Tables.PNG in the Database Folder
+
+ * @author (Giovanmaria Scanu)
+ */
 
 public class City {
 
     /**
-     * City Name
+     * Private Variables
      */
-    public String city_name;
+    //City Name
+    private String city_name;
+    //City Country Code
+    private String city_country_code;
+    //City District
+    private String city_district;
+    //City Population
+    private int city_population;
 
     /**
-     * City Country Code
+     * Init
      */
-    public String city_country_code;
+    City (String name, String country, String district, int pop){
+        this.city_name = name;
+        this.city_country_code = country;
+        this.city_district = district;
+        this.city_population = pop;
+    }
 
     /**
-     * City District
+     * Accessor : Getter
      */
-    public String city_district;
-
-    /**
-     * City Population
-     */
-    public int city_population;
-
+    public String City_name(){
+        return this.city_name;
+    }
+    public String City_country_name(){
+        return this.city_country_code;
+    }
+    public String City_district(){
+        return this.city_district;
+    }
+    public int City_population(){
+        return this.city_population;
+    }
 }

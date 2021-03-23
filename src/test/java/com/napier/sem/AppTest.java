@@ -17,6 +17,8 @@ public class AppTest
     {
     Req1 testOrder = new Req1(testConnect);
     testOrder.countryReport(1);
+    // assertEquals("CHN", testOrder.country.Country_code);
+
     }
 
     @Test
@@ -24,6 +26,9 @@ public class AppTest
     {
         Req7 testOrder = new Req7(testConnect);
         testOrder.cityReport(1);
+        // assertEquals("Mumbai", testOrder.city.City_name);
     }
+
+
 
 }

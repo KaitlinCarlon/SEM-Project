@@ -39,7 +39,10 @@ public class App
         App a = new App();
 
         // Connect to database
-        a.a.connect();
+        //Old
+        //a.a.connect();
+        //Integration Testing
+        a.a.connect("localhost:33060");
 
         // Get Data
 

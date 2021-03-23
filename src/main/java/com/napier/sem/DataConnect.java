@@ -31,7 +31,7 @@ public class DataConnect {
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+    public void connect(String location)
     {
         try
         {
@@ -53,7 +53,12 @@ public class DataConnect {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "group9");
+                // Old
+                //con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "group9");
+
+                //Integration Testing
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "group9");
+
                 System.out.println("Successfully connected");
                 break;
             }

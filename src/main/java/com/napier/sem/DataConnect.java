@@ -4,6 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This Class has been separated to encapsulate and deal with the connection to the database
+ * for and easy and efficient utilization in the main and secondary code.
+ * Activity:
+ * Connection
+ * Return of Data
+ * Disconnection
+ * @author Giovanmaria Scanu
+ */
+
 public class DataConnect {
 
     /**
@@ -11,6 +21,9 @@ public class DataConnect {
      */
     private Connection con = null;
 
+    /**
+     * Connection con getter
+     */
     public Connection con2(){
         return con;
     }

@@ -24,6 +24,12 @@ public class Req7 {
 
     private DataConnect a;
 
+    private City ritorna;
+
+    public City Ritorna(){
+        return ritorna;
+    }
+
     Req7(DataConnect dataConnect){ a = dataConnect; }
 
     public void cityReport(int limit)
@@ -55,7 +61,7 @@ public class Req7 {
             while (rset.next())
             {
                 City city = new City(rset.getString("Name"), rset.getString("CountryCode"), rset.getString("District"), rset.getInt("Population")  );
-
+                ritorna = city;
                 //if the data is present
 
                 //Show the result on screen

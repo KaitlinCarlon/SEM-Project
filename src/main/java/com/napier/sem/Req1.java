@@ -24,9 +24,16 @@ public class Req1 {
 
     private DataConnect a;
 
+    private Country ritorna;
+
+    public Country Ritorna(){
+        return ritorna;
+    }
+
     Req1(DataConnect dataConnect){
         a = dataConnect;
     }
+
 
     public void countryReport(int limit)
     {
@@ -56,6 +63,7 @@ public class Req1 {
             while (rset.next())
             {
                 Country country = new Country(rset.getString("Code"), rset.getString("Name"), rset.getString("Continent"), rset.getString("Region"), rset.getInt("Population"), null);
+                ritorna = country;
                 //if the data is present
 
                 //Show the result on screen

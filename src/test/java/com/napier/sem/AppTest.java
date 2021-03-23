@@ -10,9 +10,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest
 {
+    DataConnect testConnect = new DataConnect();
+
     @Test
-    void unitTest1()
+    void TestCountryPopulationOrder()
     {
-        assertEquals(5, 5);
+    Req1 testOrder = new Req1(testConnect);
+    testOrder.countryReport(1);
     }
+
+    @Test
+    void TestCityPopulationOrder()
+    {
+        Req7 testOrder = new Req7(testConnect);
+        testOrder.cityReport(1);
+    }
+
 }

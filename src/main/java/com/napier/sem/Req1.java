@@ -74,5 +74,4 @@ public class Req1 {
             System.out.println("Failed to get country details");
         }
     }
-
 }

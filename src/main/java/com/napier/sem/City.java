@@ -26,6 +26,7 @@ public class City {
     /**
      * Init
      */
+
     City (String name, String country, String district, int pop){
         this.city_name = name;
         this.city_country_code = country;

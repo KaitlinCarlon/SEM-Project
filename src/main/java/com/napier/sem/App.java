@@ -42,6 +42,8 @@ public class App
     ReqCity city = new ReqCity(a);
     //Extra Population
     ExtraPopReq total = new ExtraPopReq(a);
+    //Language
+    ReqLanguage linguaggio = new ReqLanguage(a);
 
 
     public static void main(String[] args)
@@ -84,6 +86,9 @@ public class App
         a.total.totalPop(Location.Country);
         a.total.totalPop(Location.District);
         a.total.totalPop(Location.City);
+
+        //Language
+        a.linguaggio.Parlare();
 
 
         // Disconnect from database

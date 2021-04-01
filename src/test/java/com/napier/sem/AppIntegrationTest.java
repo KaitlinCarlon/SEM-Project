@@ -99,4 +99,23 @@ public class AppIntegrationTest
         assertEquals(ct.Region(), "Eastern Asia");
         assertEquals(ct.Population(), 1277558000);
     }
+
+    @Test
+    void extrapopulation(){
+
+        ExtraPopReq a = new ExtraPopReq(app);
+
+        a.totalPop(Location.Basic);
+        assertEquals(a.Ritorna(), 6078749450L);
+        a.totalPop(Location.Continent);
+        assertEquals(a.Ritorna(), 3705025700L);
+        a.totalPop(Location.Region);
+        assertEquals(a.Ritorna(), 3814000);
+        a.totalPop(Location.Country);
+        assertEquals(a.Ritorna(), 37032000);
+        a.totalPop(Location.District);
+        assertEquals(a.Ritorna(), 360593);
+        a.totalPop(Location.City);
+        assertEquals(a.Ritorna(), 440900);
+    }
 }

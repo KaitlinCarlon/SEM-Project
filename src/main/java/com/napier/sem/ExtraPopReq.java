@@ -3,6 +3,31 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Requirement 7 to 15 of the SEM Coursework
+ * This Class Produce these Reports:
+ * Req 7 Report: List all the cities in the world organised by largest population to smallest.
+ * Req 12 Report: List all the cities in the world organised by largest population to smallest with limit rows
+ * Req 8 Report: List all the cities in the continent organised by largest population to smallest.
+ * Req 13 Report: List all the cities in the continent organised by largest population to smallest with limit rows
+ * Req 9 Report: List all the cities in the region organised by largest population to smallest.
+ * Req 14 Report: List all the cities in the region organised by largest population to smallest with limit rows
+ * Req 10 Report: List all the cities in the country organised by largest population to smallest.
+ * Req 15 Report: List all the cities in the country organised by largest population to smallest with limit rows
+ * Req 11 Report: List all the cities in the district organised by largest population to smallest.
+ * Req 16 Report: List all the cities in the district organised by largest population to smallest with limit rows
+ *
+ * Function:
+ * Init passing the dataConnect from the main connection
+ * Method cityReport giving instruction for limitation or not
+ * Retrieve data
+ * Rebuild Class
+ * Print Data to the Terminal
+ *
+ * @author Giovanmaria Scanu
+ * @developer  Giovanmaria Scanu
+ */
+
 public class ExtraPopReq {
 
     //Variables
@@ -36,7 +61,7 @@ public class ExtraPopReq {
 
             switch(req){
                 case Basic:
-                    strSelect = "SELECT SUM(population) AS Population country";
+                    strSelect = "SELECT SUM(population) AS Population FROM country";
                     break;
                 case Continent:
                     strSelect = "SELECT SUM(population) AS Population FROM country WHERE Continent = '" + Continent + "'";

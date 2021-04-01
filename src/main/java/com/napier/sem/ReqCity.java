@@ -3,14 +3,6 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-enum ReqCityEnum {
-    Basic,
-    Continent,
-    Region,
-    Country,
-    District
-}
-
 public class ReqCity {
 
     //Variables
@@ -33,7 +25,7 @@ public class ReqCity {
     ReqCity(DataConnect dataConnect){ a = dataConnect; }
 
     //Retrieve CityReport
-    public void cityReport(ReqCityEnum req, int limit)
+    public void cityReport(Location req, int limit)
     {
         try
         {

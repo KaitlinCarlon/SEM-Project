@@ -25,7 +25,6 @@ public class AppIntegrationTest
     void testGetCity()
     {
         ReqCity city = new ReqCity(app);
-        ReqCityEnum cityEnum;
 
         //City Reports
 
@@ -42,7 +41,7 @@ public class AppIntegrationTest
          */
 
         //Basic
-        city.cityReport(cityEnum = ReqCityEnum.Basic, 1 );
+        city.cityReport(Location.Basic, 1 );
         City basic = city.Ritorna();
         //Assert Basic
         assertEquals(basic.City_name(), "Mumbai (Bombay)");
@@ -51,7 +50,7 @@ public class AppIntegrationTest
         assertEquals(basic.City_population(), 10500000);
 
         //Continent
-        city.cityReport(cityEnum = ReqCityEnum.Continent, 1 );
+        city.cityReport(Location.Continent, 1 );
         City continent = city.Ritorna();
         //Assert Continent
         assertEquals(continent.City_name(), "Ciudad de México");
@@ -60,7 +59,7 @@ public class AppIntegrationTest
         assertEquals(continent.City_population(), 8591309);
 
         //Region
-        city.cityReport(cityEnum = ReqCityEnum.Region, 1 );
+        city.cityReport(Location.Region, 1 );
         City region = city.Ritorna();
         //Assert Region
         assertEquals(region.City_name(), "La Habana");
@@ -69,7 +68,7 @@ public class AppIntegrationTest
         assertEquals(region.City_population(), 2256000);
 
         //Country
-        city.cityReport(cityEnum = ReqCityEnum.Country, 1 );
+        city.cityReport(Location.Country, 1 );
         City country = city.Ritorna();
         //Assert Country
         assertEquals(country.City_name(), "Kabul");
@@ -78,7 +77,7 @@ public class AppIntegrationTest
         assertEquals(country.City_population(), 1780000);
 
         //District
-        city.cityReport(cityEnum = ReqCityEnum.District, 1 );
+        city.cityReport(Location.District, 1 );
         City district = city.Ritorna();
         //Assert District
         assertEquals(district.City_name(), "La Matanza");

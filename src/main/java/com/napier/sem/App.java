@@ -20,6 +20,15 @@ package com.napier.sem;
  @author (Giovanmaria Scanu)
  */
 
+
+enum Location {
+    Basic,
+    Continent,
+    Region,
+    Country,
+    District
+}
+
 public class App
 {
 
@@ -28,7 +37,7 @@ public class App
     Req2 second = new Req2(a);
     Req3 third = new Req3(a);   
 
-    ReqCityEnum cityEnum;
+    Location cityEnum;
     ReqCity city = new ReqCity(a);
 
 
@@ -53,16 +62,16 @@ public class App
         a.third.countryReport(3);
 
         //City Reports
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Basic, 0 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Basic, 1 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Continent, 0);
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Continent, 1 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Region, 0 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Region, 1 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Country, 0 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.Country,  1);
-        a.city.cityReport(a.cityEnum = ReqCityEnum.District, 0 );
-        a.city.cityReport(a.cityEnum = ReqCityEnum.District, 1 );
+        a.city.cityReport(a.cityEnum = Location.Basic, 0 );
+        a.city.cityReport(a.cityEnum = Location.Basic, 1 );
+        a.city.cityReport(a.cityEnum = Location.Continent, 0);
+        a.city.cityReport(a.cityEnum = Location.Continent, 1 );
+        a.city.cityReport(a.cityEnum = Location.Region, 0 );
+        a.city.cityReport(a.cityEnum = Location.Region, 1 );
+        a.city.cityReport(a.cityEnum = Location.Country, 0 );
+        a.city.cityReport(a.cityEnum = Location.Country,  1);
+        a.city.cityReport(a.cityEnum = Location.District, 0 );
+        a.city.cityReport(a.cityEnum = Location.District, 1 );
 
         // Disconnect from database
         a.a.disconnect();

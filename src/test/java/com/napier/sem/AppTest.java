@@ -42,7 +42,7 @@ class AppTest
     static Language language;
     //Variable assertion
     static private String linguaggio = "Italiano";
-    static private float user =5.5f;
+    static private long user =5;
     static private float userPerc =5.5f;
 
     //Initialization
@@ -59,7 +59,7 @@ class AppTest
         /**
          * Language Class Test
          */
-        language = new Language("Italiano", 5.5f, 5.5f);
+        language = new Language("Italiano", 5, 5.5f);
     }
 
     @Test
@@ -104,7 +104,6 @@ class AppTest
         assertEquals(language.Lingua(), linguaggio);
         assertEquals(language.Parlare(), user);
         assertEquals(language.Percentuale(), userPerc);
-
     }
 }
 

@@ -15,13 +15,13 @@ public class Language {
      * Private Variables
      */
     private String language;
-    private float speakers;
+    private long speakers;
     private float percentage;
 
     /**
      * Init
      */
-    Language (String lang, float speak, float perc){
+    Language (String lang, long speak, float perc){
         this.language = lang;
         this.speakers = speak;
         this.percentage = perc;
@@ -31,7 +31,7 @@ public class Language {
      * Accessor : Getter
      */
     public String Lingua(){return this.language;}
-    public float Parlare(){return this.speakers;}
+    public long Parlare(){return this.speakers;}
     public float Percentuale(){return this.percentage;}
 
 

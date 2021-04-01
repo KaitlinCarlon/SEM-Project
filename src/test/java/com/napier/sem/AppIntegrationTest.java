@@ -121,23 +121,25 @@ public class AppIntegrationTest
 
     @Test
     void Language(){
-        //to add code
         /**
-         * +----------+---------------+------------+
-         * | Language | Population    | Percentage |
-         * +----------+---------------+------------+
-         * | Chinese  | 1191843539.00 |      19.61 |
-         * | Hindi    |  405633070.00 |       6.67 |
-         * | Spanish  |  355029462.00 |       5.84 |
-         * | English  |  347077867.30 |       5.71 |
-         * | Arabic   |  233839238.70 |       3.85 |
-         * +----------+---------------+------------+
+         * Chinese 1191843539 19.61
+         *
+         * Hindi 405633085 6.67
+         *
+         * Spanish 355029461 5.84
+         *
+         * English 347077860 5.71
+         *
+         * Arabic 233839240 3.85
          */
 
         ReqLanguage a = new ReqLanguage(app);
+        a.Parlare();
+        Language b = a.Ritorna();
 
-
-
+        assertEquals(b.Lingua(), "Arabic");
+        assertEquals(b.Parlare(), 233839240);
+        assertEquals(b.Percentuale(), 3.85f);
 
     }
 }

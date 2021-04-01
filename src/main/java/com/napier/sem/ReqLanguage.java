@@ -38,7 +38,7 @@ public class ReqLanguage {
             Statement stmt = a.con2().createStatement();
             // Create string for SQL statement
 
-            strSelect = "SELECT Language, Population, ROUND(((Population * 100)/ Total),2) AS Percentage FROM( SELECT Language, SUM(Population) as Population, (SELECT SUM(population) AS Total FROM country) AS Total FROM ( SELECT CountryCode, Language, ROUND(((Population * Percentage)/100),2) AS Population FROM ( SELECT CountryCode, Language, Population, Percentage FROM countrylanguage JOIN country ON Code = CountryCode) AS T) AS W WHERE Language = 'Chinese' OR Language = 'English' OR Language = 'Hindi' OR Language = 'Spanish' OR Language = 'Arabic' GROUP BY Language ORDER BY Population DESC) AS V";
+            strSelect = "SELECT Language, Population, ROUND(((Population * 100)/ Total),2) AS Percentage FROM( SELECT Language, SUM(Population) as Population, (SELECT SUM(population) AS Total FROM country) AS Total FROM ( SELECT CountryCode, Language, ((Population * Percentage)/100) AS Population FROM ( SELECT CountryCode, Language, Population, Percentage FROM countrylanguage JOIN country ON Code = CountryCode) AS T) AS W WHERE Language = 'Chinese' OR Language = 'English' OR Language = 'Hindi' OR Language = 'Spanish' OR Language = 'Arabic' GROUP BY Language ORDER BY Population DESC) AS V";
 
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -46,7 +46,7 @@ public class ReqLanguage {
             // Check one is returned
             while (rset.next())
             {
-                Language parl = new Language(rset.getString("Language"), rset.getFloat("Population"), rset.getFloat("Percentage"));
+                Language parl = new Language(rset.getString("Language"), rset.getLong("Population"), rset.getFloat("Percentage"));
                 ritorna = parl;
                 //if the data is present
 

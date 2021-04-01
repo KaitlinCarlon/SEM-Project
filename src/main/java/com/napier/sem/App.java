@@ -26,7 +26,8 @@ enum Location {
     Continent,
     Region,
     Country,
-    District
+    District,
+    City
 }
 
 public class App
@@ -36,9 +37,11 @@ public class App
     Req1 first = new Req1(a);
     Req2 second = new Req2(a);
     Req3 third = new Req3(a);   
-
+    //City Report
     Location cityEnum;
     ReqCity city = new ReqCity(a);
+    //Extra Population
+    ExtraPopReq total = new ExtraPopReq(a);
 
 
     public static void main(String[] args)
@@ -54,6 +57,7 @@ public class App
 
         // Get Data
 
+        //Country Reports
         a.first.countryReport(0);
         a.first.countryReport(3);
         a.second.countryReport(0);
@@ -72,6 +76,15 @@ public class App
         a.city.cityReport(a.cityEnum = Location.Country,  1);
         a.city.cityReport(a.cityEnum = Location.District, 0 );
         a.city.cityReport(a.cityEnum = Location.District, 1 );
+
+        //Extra Population Request
+        a.total.totalPop(Location.Basic);
+        a.total.totalPop(Location.Continent);
+        a.total.totalPop(Location.Region);
+        a.total.totalPop(Location.Country);
+        a.total.totalPop(Location.District);
+        a.total.totalPop(Location.City);
+
 
         // Disconnect from database
         a.a.disconnect();

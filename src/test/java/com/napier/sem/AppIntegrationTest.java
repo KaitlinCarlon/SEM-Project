@@ -101,7 +101,7 @@ public class AppIntegrationTest
     }
 
     @Test
-    void extrapopulation(){
+    void extraPopulation(){
 
         ExtraPopReq a = new ExtraPopReq(app);
 
@@ -117,5 +117,23 @@ public class AppIntegrationTest
         assertEquals(a.Ritorna(), 360593);
         a.totalPop(Location.City);
         assertEquals(a.Ritorna(), 440900);
+    }
+
+    @Test
+    void Language(){
+        //to add code
+        /**
+         * +----------+---------------+------------+
+         * | Language | Population    | Percentage |
+         * +----------+---------------+------------+
+         * | Chinese  | 1191843539.00 |      19.61 |
+         * | Hindi    |  405633070.00 |       6.67 |
+         * | Spanish  |  355029462.00 |       5.84 |
+         * | English  |  347077867.30 |       5.71 |
+         * | Arabic   |  233839238.70 |       3.85 |
+         * +----------+---------------+------------+
+         */
+
+
     }
 }

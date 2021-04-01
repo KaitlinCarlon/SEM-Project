@@ -35,6 +35,16 @@ class AppTest
     static private int popolazione = 60360000;
     static private String capital = "Ittiri";
 
+    /**
+     * Language Class Test
+     */
+    //create a language object
+    static Language language;
+    //Variable assertion
+    static private String linguaggio = "Italiano";
+    static private float user =5.5f;
+    static private float userPerc =5.5f;
+
     //Initialization
     @BeforeAll
     static void init(){
@@ -46,11 +56,18 @@ class AppTest
          * Country Class Test
          */
         country = new Country("ITA", "Italia", "Europa", "Mediterraneo", 60360000, "Ittiri");
+        /**
+         * Language Class Test
+         */
+        language = new Language("Italiano", 5.5f, 5.5f);
     }
 
     @Test
-    void unitTest()
+    void cityTest()
     {
+        /**
+         * City Class Test
+         */
         //Assert the class is not null
         assertNotNull(citta);
         //Assert Data is equal to the Init Data via City Class Getter
@@ -58,7 +75,10 @@ class AppTest
         assertEquals(citta.City_country_name(), stato);
         assertEquals(citta.City_district(), district);
         assertEquals(citta.City_population(), population);
+    }
 
+    @Test
+    void countryTest(){
         /**
          * Country Class Test
          */
@@ -71,6 +91,20 @@ class AppTest
         assertEquals(country.Region(), region);
         assertEquals(country.Population(), popolazione);
         assertEquals(country.Capital(), capital);
+    }
+
+    @Test
+    void LanguageTest(){
+        /**
+         * Language Class Test
+         */
+        //Assert the class is not null
+        assertNotNull(language);
+        //Assert Data is equal to the Init Data via Language Class Getter
+        assertEquals(language.Lingua(), linguaggio);
+        assertEquals(language.Parlare(), user);
+        assertEquals(language.Percentuale(), userPerc);
+
     }
 }
 

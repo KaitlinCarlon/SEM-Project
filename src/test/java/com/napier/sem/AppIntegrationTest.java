@@ -101,7 +101,7 @@ public class AppIntegrationTest
     }
 
     @Test
-    void extrapopulation(){
+    void extraPopulation(){
 
         ExtraPopReq a = new ExtraPopReq(app);
 
@@ -117,5 +117,29 @@ public class AppIntegrationTest
         assertEquals(a.Ritorna(), 360593);
         a.totalPop(Location.City);
         assertEquals(a.Ritorna(), 440900);
+    }
+
+    @Test
+    void Language(){
+        /**
+         * Chinese 1191843539 19.61
+         *
+         * Hindi 405633085 6.67
+         *
+         * Spanish 355029461 5.84
+         *
+         * English 347077860 5.71
+         *
+         * Arabic 233839240 3.85
+         */
+
+        ReqLanguage a = new ReqLanguage(app);
+        a.Parlare();
+        Language b = a.Ritorna();
+
+        assertEquals(b.Lingua(), "Arabic");
+        assertEquals(b.Parlare(), 233839240);
+        assertEquals(b.Percentuale(), 3.85f);
+
     }
 }

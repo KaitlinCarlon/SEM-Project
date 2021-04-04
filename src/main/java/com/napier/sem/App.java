@@ -30,6 +30,13 @@ enum Location {
     City
 }
 
+enum Cntry {
+
+    Basic,
+    Continent,
+    Region
+}
+
 public class App
 {
 
@@ -37,6 +44,10 @@ public class App
     Req1 first = new Req1(a);
     Req2 second = new Req2(a);
     Req3 third = new Req3(a);   
+
+    //Country Report
+    Cntry countryEnum;
+   ReqCountry country = new ReqCountry(a);
     //City Report
     Location cityEnum;
     ReqCity city = new ReqCity(a);
@@ -60,12 +71,12 @@ public class App
         // Get Data
 
         //Country Reports
-        a.first.countryReport(0);
-        a.first.countryReport(3);
-        a.second.countryReport(0);
-        a.second.countryReport(3);
-        a.third.countryReport(0);
-        a.third.countryReport(3);
+        a.country.countryReport(a.countryEnum = Cntry.Basic, 0 );
+        a.country.countryReport(a.countryEnum = Cntry.Basic, 1 );
+        a.country.countryReport(a.countryEnum = Cntry.Continent, 0);
+        a.country.countryReport(a.countryEnum = Cntry.Continent, 1);
+        a.country.countryReport(a.countryEnum = Cntry.Region, 0 );
+        a.country.countryReport(a.countryEnum = Cntry.Region, 1 );
 
         //City Reports
         a.city.cityReport(a.cityEnum = Location.Basic, 0 );
@@ -89,7 +100,6 @@ public class App
 
         //Language
         a.linguaggio.Parlare();
-
 
         // Disconnect from database
         a.a.disconnect();

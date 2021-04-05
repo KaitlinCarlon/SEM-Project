@@ -24,10 +24,6 @@ public class AppIntegrationTest
     @Test
     void testGetCity()
     {
-        ReqCity city = new ReqCity(app);
-
-        //City Reports
-
         /**
          * Mumbai (Bombay) IND Maharashtra 10500000
          *
@@ -39,6 +35,8 @@ public class AppIntegrationTest
          *
          * La Matanza ARG Buenos Aires 1266461
          */
+
+        ReqCity city = new ReqCity(app);
 
         //Basic
         city.cityReport(Location.Basic, 1 );
@@ -89,20 +87,56 @@ public class AppIntegrationTest
     @Test
     void testGetCountry()
     {
-        Req1 a = new Req1(app);
-        a.countryReport(1);
-        Country ct = a.Ritorna();
 
-        assertEquals(ct.Country_code(), "CHN");
-        assertEquals(ct.Country_name(), "China");
-        assertEquals(ct.Country_continent(), "Asia");
-        assertEquals(ct.Region(), "Eastern Asia");
-        assertEquals(ct.Population(), 1277558000);
+        /**
+         * CHN China Asia Eastern Asia 1277558000
+         *
+         * USA United States North America North America 278357000
+         *
+         * CUB Cuba North America Caribbean 11201000
+         */
+        ReqCountry a = new ReqCountry(app);
+
+        a.countryReport(Location.Basic, 1 );
+        Country basic = a.Ritorna();
+        assertEquals(basic.Country_code(), "CHN");
+        assertEquals(basic.Country_name(), "China");
+        assertEquals(basic.Country_continent(), "Asia");
+        assertEquals(basic.Region(), "Eastern Asia");
+        assertEquals(basic.Population(), 1277558000);
+        a.countryReport(Location.Continent, 1);
+        Country continent = a.Ritorna();
+        assertEquals(continent.Country_code(), "USA");
+        assertEquals(continent.Country_name(), "United States");
+        assertEquals(continent.Country_continent(), "North America");
+        assertEquals(continent.Region(), "North America");
+        assertEquals(continent.Population(), 278357000);
+        a.countryReport(Location.Region, 1 );
+        Country region = a.Ritorna();
+        assertEquals(region.Country_code(), "CUB");
+        assertEquals(region.Country_name(), "Cuba");
+        assertEquals(region.Country_continent(), "North America");
+        assertEquals(region.Region(), "Caribbean");
+        assertEquals(region.Population(), 11201000);
     }
 
     @Test
     void extraPopulation(){
+        /**
+         * 6078749450
+         *
+         * 3705025700
+         *
+         * 38140000
+         *
+         * 37032000
+         *
+         * 360593
+         *
+         * 440900
+         */
 
+        //Population
         ExtraPopReq a = new ExtraPopReq(app);
 
         a.totalPop(Location.Basic);
@@ -110,7 +144,7 @@ public class AppIntegrationTest
         a.totalPop(Location.Continent);
         assertEquals(a.Ritorna(), 3705025700L);
         a.totalPop(Location.Region);
-        assertEquals(a.Ritorna(), 3814000);
+        assertEquals(a.Ritorna(), 38140000);
         a.totalPop(Location.Country);
         assertEquals(a.Ritorna(), 37032000);
         a.totalPop(Location.District);
@@ -140,6 +174,10 @@ public class AppIntegrationTest
         assertEquals(b.Lingua(), "Arabic");
         assertEquals(b.Parlare(), 233839240);
         assertEquals(b.Percentuale(), 3.85f);
+    }
 
+    @Test
+    void disconnect(){
+        app.disconnect();
     }
 }

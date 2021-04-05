@@ -30,26 +30,15 @@ enum Location {
     City
 }
 
-enum Cntry {
-
-    Basic,
-    Continent,
-    Region
-}
-
 public class App
 {
 
+    //Create a connection
     DataConnect a = new DataConnect();
-    Req1 first = new Req1(a);
-    Req2 second = new Req2(a);
-    Req3 third = new Req3(a);   
-
-    //Country Report
-    Cntry countryEnum;
-   ReqCountry country = new ReqCountry(a);
-    //City Report
     Location cityEnum;
+    //Country Report
+    ReqCountry country = new ReqCountry(a);
+    //City Report
     ReqCity city = new ReqCity(a);
     //Extra Population
     ExtraPopReq total = new ExtraPopReq(a);
@@ -71,24 +60,24 @@ public class App
         // Get Data
 
         //Country Reports
-        a.country.countryReport(a.countryEnum = Cntry.Basic, 0 );
-        a.country.countryReport(a.countryEnum = Cntry.Basic, 1 );
-        a.country.countryReport(a.countryEnum = Cntry.Continent, 0);
-        a.country.countryReport(a.countryEnum = Cntry.Continent, 1);
-        a.country.countryReport(a.countryEnum = Cntry.Region, 0 );
-        a.country.countryReport(a.countryEnum = Cntry.Region, 1 );
+        a.country.countryReport(Location.Basic, 0 );
+        a.country.countryReport(Location.Basic, 1 );
+        a.country.countryReport(Location.Continent, 0);
+        a.country.countryReport(Location.Continent, 1);
+        a.country.countryReport(Location.Region, 0 );
+        a.country.countryReport(Location.Region, 1 );
 
         //City Reports
-        a.city.cityReport(a.cityEnum = Location.Basic, 0 );
-        a.city.cityReport(a.cityEnum = Location.Basic, 1 );
-        a.city.cityReport(a.cityEnum = Location.Continent, 0);
-        a.city.cityReport(a.cityEnum = Location.Continent, 1 );
-        a.city.cityReport(a.cityEnum = Location.Region, 0 );
-        a.city.cityReport(a.cityEnum = Location.Region, 1 );
-        a.city.cityReport(a.cityEnum = Location.Country, 0 );
-        a.city.cityReport(a.cityEnum = Location.Country,  1);
-        a.city.cityReport(a.cityEnum = Location.District, 0 );
-        a.city.cityReport(a.cityEnum = Location.District, 1 );
+        a.city.cityReport(Location.Basic, 0 );
+        a.city.cityReport(Location.Basic, 1 );
+        a.city.cityReport(Location.Continent, 0);
+        a.city.cityReport(Location.Continent, 1 );
+        a.city.cityReport(Location.Region, 0 );
+        a.city.cityReport(Location.Region, 1 );
+        a.city.cityReport(Location.Country, 0 );
+        a.city.cityReport(Location.Country,  1);
+        a.city.cityReport(Location.District, 0 );
+        a.city.cityReport(Location.District, 1 );
 
         //Extra Population Request
         a.total.totalPop(Location.Basic);

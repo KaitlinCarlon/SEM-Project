@@ -3,6 +3,27 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Requirement 1 to 6 of the SEM Coursework
+ * This Class Produce these Reports:
+ * Req 1 Report: List Country in the World - largest to smallest.
+ * Req 4 Report: List Country in the World - largest to smallest with limit rows
+ * Req 2 Report: List Country in the continent - largest to smallest.
+ * Req 5 Report: List Country in the continent - largest to smallest with limit rows
+ * Req 3 Report: List Country in the Region - largest to smallest.
+ * Req 6 Report: List Country in the Region - largest to smallest with limit rows
+ *
+ * Function:
+ * Init passing the dataConnect from the main connection
+ * Method countryReport giving instruction for limitation or not
+ * Retrieve data
+ * Rebuild Class
+ * Print Data to the Terminal
+ *
+ * @author Giovanmaria Scanu
+ * @developer Matthew
+ */
+
 public class ReqCountry {
 
     //Variables
@@ -24,7 +45,7 @@ public class ReqCountry {
     ReqCountry(DataConnect dataConnect){ a = dataConnect; }
 
     //Retrieve CityReport
-    public void countryReport(Cntry req, int limit)
+    public void countryReport(Location req, int limit)
     {
         try
         {
@@ -52,13 +73,13 @@ public class ReqCountry {
                         strSelect =
                                 "SELECT Code, Name, Continent, Region, Population, Capital "
                                         + "FROM country "
-                                        + "WHERE continent = " + Continent + " "
+                                        + "WHERE continent = '" + Continent + "' "
                                         + "ORDER BY Population DESC";
                     } else {
                         strSelect =
                                 "SELECT Code, Name, Continent, Region, Population, Capital "
                                         + "FROM country "
-                                        + "WHERE continent = " + Continent + ""
+                                        + "WHERE continent = '" + Continent + "' "
                                         + "ORDER BY Population DESC "
                                         + "LIMIT " + limit + "";
                     }
@@ -68,13 +89,13 @@ public class ReqCountry {
                         strSelect =
                                 "SELECT Code, Name, Continent, Region, Population, Capital "
                                         + "FROM country "
-                                        + "WHERE region = " + Region + ""
+                                        + "WHERE region = '" + Region + "' "
                                         + "ORDER BY Population DESC";
                     } else {
                         strSelect =
                                 "SELECT Code, Name, Continent, Region, Population, Capital "
                                         + "FROM country "
-                                        + "WHERE region = " + Region + ""
+                                        + "WHERE region = '" + Region + "' "
                                         + "ORDER BY Population DESC "
                                         + "LIMIT " + limit + "";
                     }

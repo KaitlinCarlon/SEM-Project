@@ -44,6 +44,8 @@ public class App
     ExtraPopReq total = new ExtraPopReq(a);
     //Language
     ReqLanguage linguaggio = new ReqLanguage(a);
+    //Capital City Report
+    ReqCapitalCity capCity = new ReqCapitalCity(a);
 
 
     public static void main(String[] args)
@@ -90,6 +92,13 @@ public class App
         //Language
         a.linguaggio.Parlare();
 
+        //Capital City Reports
+        a.capCity.capitalCityReport(Location.Basic,0);
+        a.capCity.capitalCityReport(Location.Basic,1);
+        a.capCity.capitalCityReport(Location.Continent,1);
+        a.capCity.capitalCityReport(Location.Continent,0);
+        a.capCity.capitalCityReport(Location.Region,1);
+        a.capCity.capitalCityReport(Location.Region,0);
         // Disconnect from database
         a.a.disconnect();
     }

@@ -34,6 +34,13 @@ public class City {
         this.city_population = pop;
     }
 
+    City(String name, String country, int pop){
+        this.city_name = name;
+        this.city_country_code = country;
+        this.city_population = pop;
+    }
+
+
     /**
      * Accessor : Getter
      */

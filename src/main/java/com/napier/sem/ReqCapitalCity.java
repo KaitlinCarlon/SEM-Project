@@ -33,7 +33,7 @@ public class ReqCapitalCity {
     private String strSelect;
 
     //Specific String
-    private String Continent = "North American";
+    private String Continent = "North America";
     private String Region = "Caribbean";
 
     //Return City for test

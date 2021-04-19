@@ -177,6 +177,37 @@ public class AppIntegrationTest
     }
 
     @Test
+    void capitalCity(){
+        /**
+         * | Seoul | KOR         |    9981619 |
+         * | Ciudad de México         | MEX         |    8591309 |
+         *| La Habana | CUB         |    2256000 |
+         */
+        //Capital City Report
+        ReqCapitalCity capCity = new ReqCapitalCity(app);
+
+        //Capital City Reports
+        capCity.capitalCityReport(Location.Basic,1);
+        City basic = capCity.Ritorna();
+        assertEquals(basic.City_name(), "Seoul");
+        assertEquals(basic.City_country_name(), "KOR");
+        assertEquals(basic.City_population(), 9981619);
+
+        capCity.capitalCityReport(Location.Continent,1);
+        City continent = capCity.Ritorna();
+        assertEquals(basic.City_name(), "Ciudad de México");
+        assertEquals(basic.City_country_name(), "MEX");
+        assertEquals(basic.City_population(), 8591309);
+
+        capCity.capitalCityReport(Location.Region,1);
+        City region = capCity.Ritorna();
+        assertEquals(basic.City_name(), "La Habana");
+        assertEquals(basic.City_country_name(), "CUB");
+        assertEquals(basic.City_population(), 2256000);
+
+    }
+
+    @Test
     void disconnect(){
         app.disconnect();
     }

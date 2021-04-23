@@ -170,6 +170,7 @@ public class AppIntegrationTest
          */
 
         ReqLanguage a = new ReqLanguage(app);
+        a.Parlare();
         Language b = a.Ritorna();
 
         assertEquals(b.Lingua(), "Arabic");

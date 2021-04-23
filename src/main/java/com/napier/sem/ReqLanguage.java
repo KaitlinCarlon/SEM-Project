@@ -3,6 +3,8 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static java.lang.System.*;
+
 /**
  * Requirement 32 of the SEM Coursework
  * This Class Produce these Reports:
@@ -51,7 +53,7 @@ public class ReqLanguage {
                 //if the data is present
 
                 //Show the result on screen
-                System.out.println(
+                out.println(
                         parl.Lingua()+ " "
                                 + parl.Parlare() + " "
                                 + parl.Percentuale() + "\n"
@@ -60,8 +62,8 @@ public class ReqLanguage {
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
+            out.println(e.getMessage());
+            out.println("Failed to get city details");
         }
     }
 

@@ -3,6 +3,8 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static java.lang.System.*;
+
 /**
  * Requirement 26 to 31 of the SEM Coursework
  * This Class Produce these Reports:
@@ -87,13 +89,13 @@ public class ExtraPopReq {
                 //if the data is present
 
                 //Show the result on screen
-                System.out.println( population + "\n");
+                out.println( population + "\n");
             }
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
+            out.println(e.getMessage());
+            out.println("Failed to get city details");
         }
     }
 }

@@ -140,17 +140,23 @@ public class AppIntegrationTest
         ExtraPopReq a = new ExtraPopReq(app);
 
         a.totalPop(Location.Basic);
-        assertEquals(6078749450L, a.Ritorna());
+        long b = (long) a.Ritorna();
+        assertEquals(6078749450L, b);
         a.totalPop(Location.Continent);
-        assertEquals(3705025700L, a.Ritorna());
+        long c = (long) a.Ritorna();
+        assertEquals(3705025700L, c);
         a.totalPop(Location.Region);
-        assertEquals(38140000, a.Ritorna());
+        long d = (long) a.Ritorna();
+        assertEquals(38140000, d);
         a.totalPop(Location.Country);
-        assertEquals(37032000, a.Ritorna());
+        long e = (long) a.Ritorna();
+        assertEquals(37032000, e);
         a.totalPop(Location.District);
-        assertEquals(360593, a.Ritorna());
+        long f = (long) a.Ritorna();
+        assertEquals(360593, f);
         a.totalPop(Location.City);
-        assertEquals(440900, a.Ritorna());
+        long g = (long) a.Ritorna();
+        assertEquals(440900, g);
     }
 
     @Test

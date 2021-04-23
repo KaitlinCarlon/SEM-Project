@@ -63,44 +63,44 @@ public class App
         //Country Reports
         System.out.println( "Country Report \n" );
         System.out.println( "Full List \n" );
-        a.country.countryReport(Location.Basic, 0 );
+        a.country.countryReport(Location.Basic, 5 );
         System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Basic, 1 );
         System.out.println( "Continent: North America \n" );
         System.out.println( "Full List \n" );
-        a.country.countryReport(Location.Continent, 0);
+        a.country.countryReport(Location.Continent, 5);
         System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Continent, 1);
         System.out.println( "Region: Caribbean\n" );
         System.out.println( "Full List \n" );
-        a.country.countryReport(Location.Region, 0 );
+        a.country.countryReport(Location.Region, 5 );
         System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Region, 1 );
 
         //City Reports
         System.out.println( "City Report \n" );
         System.out.println( "Full List \n" );
-        a.city.cityReport(Location.Basic, 0 );
+        a.city.cityReport(Location.Basic, 5 );
         System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Basic, 1 );
         System.out.println( "Continent: North America\n" );
         System.out.println( "Full List \n" );
-        a.city.cityReport(Location.Continent, 0);
+        a.city.cityReport(Location.Continent, 5);
         System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Continent, 1 );
         System.out.println( "Region: Caribbean\n" );
         System.out.println( "Full List \n" );
-        a.city.cityReport(Location.Region, 0 );
+        a.city.cityReport(Location.Region, 5 );
         System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Region, 1 );
         System.out.println( "Country: AFG\n" );
         System.out.println( "Full List \n" );
-        a.city.cityReport(Location.Country, 0 );
+        a.city.cityReport(Location.Country, 5 );
         System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Country,  1);
         System.out.println( "District: Buenos Aires\n" );
         System.out.println( "Full List \n" );
-        a.city.cityReport(Location.District, 0 );
+        a.city.cityReport(Location.District, 5 );
         System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.District, 5 );
 
@@ -128,17 +128,17 @@ public class App
         //Capital City Reports
         System.out.println( "Capital City \n" );
         System.out.println( "Full List \n" );
-        a.capCity.capitalCityReport(Location.Basic,0);
+        a.capCity.capitalCityReport(Location.Basic,5);
         System.out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Basic,1);
         System.out.println( "Continent: North America\n" );
         System.out.println( "Full List \n" );
-        a.capCity.capitalCityReport(Location.Continent,0);
+        a.capCity.capitalCityReport(Location.Continent,5);
         System.out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Continent,1);
         System.out.println( "Region: Caribbean\n" );
         System.out.println( "Full List \n" );
-        a.capCity.capitalCityReport(Location.Region,0);
+        a.capCity.capitalCityReport(Location.Region,5);
         System.out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Region,1);
 

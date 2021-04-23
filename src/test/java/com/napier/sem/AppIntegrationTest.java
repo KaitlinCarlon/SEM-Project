@@ -155,20 +155,24 @@ public class AppIntegrationTest
 
     @Test
     void Language(){
+        //home build
         /**
          * Chinese 1191843539 19.61
-         *
          * Hindi 405633085 6.67
-         *
          * Spanish 355029461 5.84
-         *
          * English 347077860 5.71
-         *
+         * Arabic 233839238 3.85
+         */
+        //travis result
+        /**
+         * Chinese 1191843539 19.61
+         * Hindi 405633070 6.67
+         * Spanish 355029462 5.84
+         * English 347077867 5.71
          * Arabic 233839238 3.85
          */
 
         ReqLanguage a = new ReqLanguage(app);
-        a.Parlare();
         Language b = a.Ritorna();
 
         assertEquals(b.Lingua(), "Arabic");

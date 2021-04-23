@@ -140,17 +140,17 @@ public class AppIntegrationTest
         ExtraPopReq a = new ExtraPopReq(app);
 
         a.totalPop(Location.Basic);
-        assertEquals(a.Ritorna(), 6078749450L);
+        assertEquals(6078749450L, a.Ritorna());
         a.totalPop(Location.Continent);
-        assertEquals(a.Ritorna(), 3705025700L);
+        assertEquals(3705025700L, a.Ritorna());
         a.totalPop(Location.Region);
-        assertEquals(a.Ritorna(), 38140000);
+        assertEquals(38140000, a.Ritorna());
         a.totalPop(Location.Country);
-        assertEquals(a.Ritorna(), 37032000);
+        assertEquals(37032000, a.Ritorna());
         a.totalPop(Location.District);
-        assertEquals(a.Ritorna(), 360593);
+        assertEquals(360593, a.Ritorna());
         a.totalPop(Location.City);
-        assertEquals(a.Ritorna(), 440900);
+        assertEquals(440900, a.Ritorna());
     }
 
     @Test
@@ -161,7 +161,7 @@ public class AppIntegrationTest
          * Hindi 405633085 6.67
          * Spanish 355029461 5.84
          * English 347077860 5.71
-         * Arabic 233839238 3.85
+         * Arabic 233839240 3.85
          */
         //travis result
         /**

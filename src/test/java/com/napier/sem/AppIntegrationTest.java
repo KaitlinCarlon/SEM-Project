@@ -87,7 +87,6 @@ public class AppIntegrationTest
     @Test
     void testGetCountry()
     {
-
         /**
          * CHN China Asia Eastern Asia 1277558000
          *
@@ -121,33 +120,6 @@ public class AppIntegrationTest
     }
 
     @Test
-    void Language(){
-        //home build
-        /**
-         * Chinese 1191843539 19.61
-         * Hindi 405633085 6.67
-         * Spanish 355029461 5.84
-         * English 347077860 5.71
-         * Arabic 233839240 3.85
-         */
-        //travis result
-        /**
-         * Chinese 1191843539 19.61
-         * Hindi 405633070 6.67
-         * Spanish 355029462 5.84
-         * English 347077867 5.71
-         * Arabic 233839238 3.85
-         */
-
-        ReqLanguage a = new ReqLanguage(app);
-        Language b = a.Ritorna();
-
-        assertEquals(b.Lingua(), "Arabic");
-        assertEquals(b.Parlare(), 233839238);
-        assertEquals(b.Percentuale(), 3.85f);
-    }
-
-    @Test
     void capitalCity(){
         /**
          * | Seoul | KOR         |    9981619 |
@@ -175,7 +147,6 @@ public class AppIntegrationTest
         assertEquals(region.City_name(), "La Habana");
         assertEquals(region.City_country_name(), "CUB");
         assertEquals(region.City_population(), 2256000);
-
     }
 
     @Test

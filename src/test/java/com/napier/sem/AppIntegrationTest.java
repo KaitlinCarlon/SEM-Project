@@ -164,7 +164,7 @@ public class AppIntegrationTest
          *
          * English 347077860 5.71
          *
-         * Arabic 233839240 3.85
+         * Arabic 233839238 3.85
          */
 
         ReqLanguage a = new ReqLanguage(app);
@@ -172,7 +172,7 @@ public class AppIntegrationTest
         Language b = a.Ritorna();
 
         assertEquals(b.Lingua(), "Arabic");
-        assertEquals(b.Parlare(), 233839240);
+        assertEquals(b.Parlare(), 233839238);
         assertEquals(b.Percentuale(), 3.85f);
     }
 

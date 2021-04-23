@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * Requirement 7 to 15 of the SEM Coursework
+ * Requirement 17 to 22 of the SEM Coursework
  * This Class Produce these Reports:
  *
  * Req 17 Report: List all the capital cities in the world organised by largest population to smallest.
@@ -55,54 +55,54 @@ public class ReqCapitalCity {
                 case Basic:
                     if (limit == 0) {
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
                                         + "JOIN country ON Capital = ID "
                                         + "ORDER BY city.Population DESC";
                     }
                     else{
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
                                         + "JOIN country ON Capital = ID "
-                                        + "ORDER BY city.Population DESC"
-                                        + "LIMIT" + limit + "";
+                                        + "ORDER BY city.Population DESC "
+                                        + "LIMIT " + limit + "";
                     }
                     break;
                 case Continent:
                     if (limit == 0){
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
-                                        + "JOIN country ON Capital = ID WHERE Continent = '" + Continent + "'"
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
+                                        + "JOIN country ON Capital = ID WHERE Continent = '" + Continent + "' "
                                         + "ORDER BY city.Population DESC";
                     }
                     else{
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
-                                        + "JOIN country ON Capital = ID WHERE Continent = '" + Continent + "'"
-                                        + "ORDER BY city.Population DESC"
-                                        + "LIMIT" + limit + "";
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
+                                        + "JOIN country ON Capital = ID WHERE Continent = '" + Continent + "' "
+                                        + "ORDER BY city.Population DESC "
+                                        + "LIMIT " + limit + "";
 
                     }
                     break;
                 case Region:
                     if (limit == 0){
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
-                                        + "JOIN country ON Capital = ID WHERE Region = '" + Region + "'"
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
+                                        + "JOIN country ON Capital = ID WHERE Region = '" + Region + "' "
                                         + "ORDER BY city.Population DESC";
 
                     }
                     else {
                         strSelect =
-                                "SELECT city.Name, CountryCode, city.Population"
-                                        + "FROM city"
-                                        + "JOIN country ON Capital = ID WHERE Region = '" + Region + "'"
-                                        + "ORDER BY city.Population DESC"
-                                        + "LIMIT" + limit + "";
+                                "SELECT city.Name, CountryCode, city.Population "
+                                        + "FROM city "
+                                        + "JOIN country ON Capital = ID WHERE Region = '" + Region + "' "
+                                        + "ORDER BY city.Population DESC "
+                                        + "LIMIT " + limit + "";
                     }
                     break;
             }

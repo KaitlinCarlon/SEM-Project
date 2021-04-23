@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * Requirement 7 to 15 of the SEM Coursework
+ * Requirement 7 to 16 of the SEM Coursework
  * This Class Produce these Reports:
  * Req 7 Report: List all the cities in the world organised by largest population to smallest.
  * Req 12 Report: List all the cities in the world organised by largest population to smallest with limit rows

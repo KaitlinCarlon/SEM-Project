@@ -195,15 +195,15 @@ public class AppIntegrationTest
 
         capCity.capitalCityReport(Location.Continent,1);
         City continent = capCity.Ritorna();
-        assertEquals(basic.City_name(), "Ciudad de México");
-        assertEquals(basic.City_country_name(), "MEX");
-        assertEquals(basic.City_population(), 8591309);
+        assertEquals(continent.City_name(), "Ciudad de México");
+        assertEquals(continent.City_country_name(), "MEX");
+        assertEquals(continent.City_population(), 8591309);
 
         capCity.capitalCityReport(Location.Region,1);
         City region = capCity.Ritorna();
-        assertEquals(basic.City_name(), "La Habana");
-        assertEquals(basic.City_country_name(), "CUB");
-        assertEquals(basic.City_population(), 2256000);
+        assertEquals(region.City_name(), "La Habana");
+        assertEquals(region.City_country_name(), "CUB");
+        assertEquals(region.City_population(), 2256000);
 
     }
 

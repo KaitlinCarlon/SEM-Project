@@ -4,18 +4,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * Requirement 7 to 16 of the SEM Coursework
+ * Requirement 26 to 31 of the SEM Coursework
  * This Class Produce these Reports:
- * Req 7 Report: List all the cities in the world organised by largest population to smallest.
- * Req 12 Report: List all the cities in the world organised by largest population to smallest with limit rows
- * Req 8 Report: List all the cities in the continent organised by largest population to smallest.
- * Req 13 Report: List all the cities in the continent organised by largest population to smallest with limit rows
- * Req 9 Report: List all the cities in the region organised by largest population to smallest.
- * Req 14 Report: List all the cities in the region organised by largest population to smallest with limit rows
- * Req 10 Report: List all the cities in the country organised by largest population to smallest.
- * Req 15 Report: List all the cities in the country organised by largest population to smallest with limit rows
- * Req 11 Report: List all the cities in the district organised by largest population to smallest.
- * Req 16 Report: List all the cities in the district organised by largest population to smallest with limit rows
+ * Req 26 Report: Access to world population.
+ * Req 27 Report: Access to continets population.
+ * Req 28 Report: Access to regions population.
+ * Req 29 Report: Access to countries population.
+ * Req 30 Report: Access to discricts population.
+ * Req 31 Report: Access to cities population.
  *
  * Function:
  * Init passing the dataConnect from the main connection

@@ -60,45 +60,88 @@ public class App
         a.a.connect("localhost:33060");
 
         // Get Data
-
         //Country Reports
+        System.out.println( "Country Report \n" );
+        System.out.println( "Full List \n" );
         a.country.countryReport(Location.Basic, 0 );
+        System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Basic, 1 );
+        System.out.println( "Continent: North America \n" );
+        System.out.println( "Full List \n" );
         a.country.countryReport(Location.Continent, 0);
+        System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Continent, 1);
+        System.out.println( "Region: Caribbean\n" );
+        System.out.println( "Full List \n" );
         a.country.countryReport(Location.Region, 0 );
+        System.out.println( "Limit 1 \n" );
         a.country.countryReport(Location.Region, 1 );
 
         //City Reports
+        System.out.println( "City Report \n" );
+        System.out.println( "Full List \n" );
         a.city.cityReport(Location.Basic, 0 );
+        System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Basic, 1 );
+        System.out.println( "Continent: North America\n" );
+        System.out.println( "Full List \n" );
         a.city.cityReport(Location.Continent, 0);
+        System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Continent, 1 );
+        System.out.println( "Region: Caribbean\n" );
+        System.out.println( "Full List \n" );
         a.city.cityReport(Location.Region, 0 );
+        System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Region, 1 );
+        System.out.println( "Country: AFG\n" );
+        System.out.println( "Full List \n" );
         a.city.cityReport(Location.Country, 0 );
+        System.out.println( "Limit 1 \n" );
         a.city.cityReport(Location.Country,  1);
+        System.out.println( "District: Buenos Aires\n" );
+        System.out.println( "Full List \n" );
         a.city.cityReport(Location.District, 0 );
-        a.city.cityReport(Location.District, 1 );
+        System.out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.District, 5 );
+
 
         //Extra Population Request
+        System.out.println( "Extra Population Report \n" );
+        System.out.println( "Full List \n" );
         a.total.totalPop(Location.Basic);
+        System.out.println( "Continent: Asia\n" );
         a.total.totalPop(Location.Continent);
+        System.out.println( "Region : Caribbean\n" );
         a.total.totalPop(Location.Region);
+        System.out.println( "Country: Argentina\n" );
         a.total.totalPop(Location.Country);
+        System.out.println( "District: Utrecht\n" );
         a.total.totalPop(Location.District);
+        System.out.println( "City Haag\n" );
         a.total.totalPop(Location.City);
+        System.out.println( "\n" );
 
         //Language
+        System.out.println( "Language and Percentage \n" );
         a.linguaggio.Parlare();
 
         //Capital City Reports
+        System.out.println( "Capital City \n" );
+        System.out.println( "Full List \n" );
         a.capCity.capitalCityReport(Location.Basic,0);
+        System.out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Basic,1);
-        a.capCity.capitalCityReport(Location.Continent,1);
+        System.out.println( "Continent: North America\n" );
+        System.out.println( "Full List \n" );
         a.capCity.capitalCityReport(Location.Continent,0);
-        a.capCity.capitalCityReport(Location.Region,1);
+        System.out.println( "Limit 1 \n" );
+        a.capCity.capitalCityReport(Location.Continent,1);
+        System.out.println( "Region: Caribbean\n" );
+        System.out.println( "Full List \n" );
         a.capCity.capitalCityReport(Location.Region,0);
+        System.out.println( "Limit 1 \n" );
+        a.capCity.capitalCityReport(Location.Region,1);
+
         // Disconnect from database
         a.a.disconnect();
     }

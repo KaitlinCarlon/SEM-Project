@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * Requirement 30 of the SEM Coursework
+ * Requirement 32 of the SEM Coursework
  * This Class Produce these Reports:
  * Number of people and world percentage of Chinese, English, Hindi, Spanish and Arabic language user. Greater to smallest.
  * Function:

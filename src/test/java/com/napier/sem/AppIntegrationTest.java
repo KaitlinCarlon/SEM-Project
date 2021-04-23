@@ -121,45 +121,6 @@ public class AppIntegrationTest
     }
 
     @Test
-    void extraPopulation(){
-        /**
-         * 6078749450
-         *
-         * 3705025700
-         *
-         * 38140000
-         *
-         * 37032000
-         *
-         * 360593
-         *
-         * 440900
-         */
-
-        //Population
-        ExtraPopReq a = new ExtraPopReq(app);
-
-        a.totalPop(Location.Basic);
-        long b = (long) a.Ritorna();
-        assertEquals(6078749450L, b);
-        a.totalPop(Location.Continent);
-        long c = (long) a.Ritorna();
-        assertEquals(3705025700L, c);
-        a.totalPop(Location.Region);
-        long d = (long) a.Ritorna();
-        assertEquals(38140000, d);
-        a.totalPop(Location.Country);
-        long e = (long) a.Ritorna();
-        assertEquals(37032000, e);
-        a.totalPop(Location.District);
-        long f = (long) a.Ritorna();
-        assertEquals(360593, f);
-        a.totalPop(Location.City);
-        long g = (long) a.Ritorna();
-        assertEquals(440900, g);
-    }
-
-    @Test
     void Language(){
         //home build
         /**

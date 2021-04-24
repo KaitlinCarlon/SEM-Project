@@ -3,6 +3,8 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static java.lang.System.*;
+
 /**
  * Requirement 1 to 6 of the SEM Coursework
  * This Class Produce these Reports:
@@ -112,7 +114,7 @@ public class ReqCountry {
                 //if the data is present
 
                 //Show the result on screen
-                System.out.println(
+                out.println(
                         country.Country_code()+ " "
                                 + country.Country_name() + " "
                                 + country.Country_continent() + " "
@@ -123,8 +125,8 @@ public class ReqCountry {
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
+            out.println(e.getMessage());
+            out.println("Failed to get country details");
         }
     }
 

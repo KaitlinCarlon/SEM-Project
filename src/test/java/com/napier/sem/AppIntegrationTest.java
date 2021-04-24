@@ -1,10 +1,9 @@
 package com.napier.sem;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -87,7 +86,6 @@ public class AppIntegrationTest
     @Test
     void testGetCountry()
     {
-
         /**
          * CHN China Asia Eastern Asia 1277558000
          *
@@ -121,6 +119,64 @@ public class AppIntegrationTest
     }
 
     @Test
+    void capitalCity(){
+        /**
+         * | Seoul | KOR         |    9981619 |
+         * | Ciudad de México         | MEX         |    8591309 |
+         *| La Habana | CUB         |    2256000 |
+         */
+        //Capital City Report
+        ReqCapitalCity capCity = new ReqCapitalCity(app);
+
+        //Capital City Reports
+        capCity.capitalCityReport(Location.Basic,1);
+        City basic = capCity.Ritorna();
+        assertEquals(basic.City_name(), "Seoul");
+        assertEquals(basic.City_country_name(), "KOR");
+        assertEquals(basic.City_population(), 9981619);
+
+        capCity.capitalCityReport(Location.Continent,1);
+        City continent = capCity.Ritorna();
+        assertEquals(continent.City_name(), "Ciudad de México");
+        assertEquals(continent.City_country_name(), "MEX");
+        assertEquals(continent.City_population(), 8591309);
+
+        capCity.capitalCityReport(Location.Region,1);
+        City region = capCity.Ritorna();
+        assertEquals(region.City_name(), "La Habana");
+        assertEquals(region.City_country_name(), "CUB");
+        assertEquals(region.City_population(), 2256000);
+    }
+
+    @Test
+    void Language(){
+        //home build
+        /**
+         * Chinese 1191843539 19.61
+         * Hindi 405633085 6.67
+         * Spanish 355029461 5.84
+         * English 347077860 5.71
+         * Arabic 233839240 3.85
+         */
+        //travis result
+        /**
+         * Chinese 1191843539 19.61
+         * Hindi 405633070 6.67
+         * Spanish 355029462 5.84
+         * English 347077867 5.71
+         * Arabic 233839238 3.85
+         */
+
+        ReqLanguage a = new ReqLanguage(app);
+        a.Parlare();
+        Language b = a.Ritorna();
+
+        assertEquals(b.Lingua(), "Arabic");
+        assertEquals(b.Parlare(), 233839238);
+        assertEquals(b.Percentuale(), 3.85f);
+    }
+
+    @Test
     void extraPopulation(){
         /**
          * 6078749450
@@ -140,75 +196,27 @@ public class AppIntegrationTest
         ExtraPopReq a = new ExtraPopReq(app);
 
         a.totalPop(Location.Basic);
-        assertEquals(a.Ritorna(), 6078749450L);
+        long b = (long) a.Ritorna();
+        assertEquals(6078749450L, b);
         a.totalPop(Location.Continent);
-        assertEquals(a.Ritorna(), 3705025700L);
+        long c = (long) a.Ritorna();
+        assertEquals(3705025700L, c);
         a.totalPop(Location.Region);
-        assertEquals(a.Ritorna(), 38140000);
+        long d = (long) a.Ritorna();
+        assertEquals(38140000, d);
         a.totalPop(Location.Country);
-        assertEquals(a.Ritorna(), 37032000);
+        long e = (long) a.Ritorna();
+        assertEquals(37032000, e);
         a.totalPop(Location.District);
-        assertEquals(a.Ritorna(), 360593);
+        long f = (long) a.Ritorna();
+        assertEquals(360593, f);
         a.totalPop(Location.City);
-        assertEquals(a.Ritorna(), 440900);
+        long g = (long) a.Ritorna();
+        assertEquals(440900, g);
     }
 
-    @Test
-    void Language(){
-        /**
-         * Chinese 1191843539 19.61
-         *
-         * Hindi 405633085 6.67
-         *
-         * Spanish 355029461 5.84
-         *
-         * English 347077860 5.71
-         *
-         * Arabic 233839240 3.85
-         */
-
-        ReqLanguage a = new ReqLanguage(app);
-        a.Parlare();
-        Language b = a.Ritorna();
-
-        assertEquals(b.Lingua(), "Arabic");
-        assertEquals(b.Parlare(), 233839240);
-        assertEquals(b.Percentuale(), 3.85f);
-    }
-
-    @Test
-    void capitalCity(){
-        /**
-         * | Seoul | KOR         |    9981619 |
-         * | Ciudad de México         | MEX         |    8591309 |
-         *| La Habana | CUB         |    2256000 |
-         */
-        //Capital City Report
-        ReqCapitalCity capCity = new ReqCapitalCity(app);
-
-        //Capital City Reports
-        capCity.capitalCityReport(Location.Basic,1);
-        City basic = capCity.Ritorna();
-        assertEquals(basic.City_name(), "Seoul");
-        assertEquals(basic.City_country_name(), "KOR");
-        assertEquals(basic.City_population(), 9981619);
-
-        capCity.capitalCityReport(Location.Continent,1);
-        City continent = capCity.Ritorna();
-        assertEquals(basic.City_name(), "Ciudad de México");
-        assertEquals(basic.City_country_name(), "MEX");
-        assertEquals(basic.City_population(), 8591309);
-
-        capCity.capitalCityReport(Location.Region,1);
-        City region = capCity.Ritorna();
-        assertEquals(basic.City_name(), "La Habana");
-        assertEquals(basic.City_country_name(), "CUB");
-        assertEquals(basic.City_population(), 2256000);
-
-    }
-
-    @Test
-    void disconnect(){
+    @AfterAll
+    static void disconnect(){
         app.disconnect();
     }
 }

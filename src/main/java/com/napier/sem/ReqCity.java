@@ -3,6 +3,8 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static java.lang.System.*;
+
 /**
  * Requirement 7 to 15 of the SEM Coursework
  * This Class Produce these Reports:
@@ -145,7 +147,7 @@ public class ReqCity {
                 //if the data is present
 
                 //Show the result on screen
-                System.out.println(
+                out.println(
                         city.City_name()+ " "
                                 + city.City_country_name() + " "
                                 + city.City_district() + " "
@@ -155,8 +157,8 @@ public class ReqCity {
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
+            out.println(e.getMessage());
+            out.println("Failed to get city details");
         }
     }
 

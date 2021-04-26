@@ -58,3 +58,8 @@ Scrum Master: Matthew Skilling
 
 - Release  
   [![Releases](https://img.shields.io/github/release/KaitlinCarlon/SEM-Project/all.svg?style=flat-square)](https://github.com/KaitlinCarlon/SEM-Project/releases)
+  
+- CodeCov
+  
+  [![codecov](https://codecov.io/gh/KaitlinCarlon/SEM-Project/branch/develop/graph/badge.svg?token=PYB4QLPIM1)](https://codecov.io/gh/KaitlinCarlon/SEM-Project)
+  

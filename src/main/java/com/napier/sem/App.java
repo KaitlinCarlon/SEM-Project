@@ -50,7 +50,8 @@ public class App
     ReqLanguage linguaggio = new ReqLanguage(a);
     //Capital City Report
     ReqCapitalCity capCity = new ReqCapitalCity(a);
-    ReqPopulation pop = new ReqPopulation(a);
+    //Population for Country/Region/Continent Reports
+    //ReqPopulation pop = new ReqPopulation(a);
 
 
     public static void main(String[] args)

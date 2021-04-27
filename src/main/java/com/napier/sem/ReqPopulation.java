@@ -60,6 +60,9 @@ public class ReqPopulation {
                                 "JOIN city ON city.CountryCode = country.Code " +
                                 "GROUP BY country.Code";
 
+
+
+
             break;
                 case Region:
                         strSelect = "SELECT country.Region, SUM(country.Population) as RegionPopulation, SUM(city.Population) AS CityPopulation, " +
@@ -89,24 +92,63 @@ public class ReqPopulation {
             // Check one is returned
                     while (rset.next())
                     {
-                        Population population = new Population(rset.getString("Country Name"), rset.getString("Continent Name"), rset.getString("Region Name"), rset.getInt("Country Population"), rset.getInt("Region Population"), rset.getInt("Continent Population"), rset.getInt(" City Population"), rset.getInt(" Outside City Population"), rset.getFloat("City Percentage"), rset.getFloat("Outside City Percentage"));
-                        ritorna = population;
-                        //if the data is present
+                        switch(req){
+                            case Basic:
+                                Population population = new Population(rset.getString("Country Name"), null, null, rset.getInt("Country Population"),0, 0, rset.getInt(" City Population"), rset.getInt(" Outside City Population"), rset.getFloat("City Percentage"), rset.getFloat("Outside City Percentage"));
+                                ritorna = population;
+                                //if the data is present
 
-                        //show the result on screen
-                        out.println(
-                                population.Country_name() + " "
-                                        + population.Country_continent() + " "
-                                        + population.RegionName() + " "
-                                        + population.Country_population() + " "
-                                        + population.Region_population() + " "
-                                        + population.Continent_population() + " "
-                                        + population.City_pop() + " "
-                                        + population.NotCity_population() + " "
-                                        + population.CityPercentage() + " "
-                                        + population.NotCityPercentage() + "\n"
+                                //show the result on screen
+                                out.println(
+                                        population.Country_name() + " "
+                                                + population.Country_population() + " "
+                                                + population.City_pop() + " "
+                                                + population.NotCity_population() + " "
+                                                + population.CityPercentage() + " "
+                                                + population.NotCityPercentage() + "\n"
 
-                        );
+                                );
+
+
+
+
+                                break;
+                            case Region:
+                                Population population2 = new Population(null, null, rset.getString("Region Name"), 0, rset.getInt("Region Population"), 0, rset.getInt(" City Population"), rset.getInt(" Outside City Population"), rset.getFloat("City Percentage"), rset.getFloat("Outside City Percentage"));
+                                ritorna = population2;
+                                //if the data is present
+
+                                //show the result on screen
+                                out.println(
+                                        population2.RegionName() + " "
+                                                + population2.Region_population() + " "
+                                                + population2.City_pop() + " "
+                                                + population2.NotCity_population() + " "
+                                                + population2.CityPercentage() + " "
+                                                + population2.NotCityPercentage() + "\n"
+
+                                );
+
+                                break;
+                            case Continent:
+                                Population population3 = new Population(null, rset.getString("Continent Name"), null, 0, 0, rset.getInt("Continent Population"), rset.getInt(" City Population"), rset.getInt(" Outside City Population"), rset.getFloat("City Percentage"), rset.getFloat("Outside City Percentage"));
+                                ritorna = population3;
+                                //if the data is present
+
+                                //show the result on screen
+                                out.println(
+                                        population3.Country_continent() + " "
+                                                + population3.Continent_population() + " "
+                                                + population3.City_pop() + " "
+                                                + population3.NotCity_population() + " "
+                                                + population3.CityPercentage() + " "
+                                                + population3.NotCityPercentage() + "\n"
+
+                                );
+
+                                break;
+                        }
+
             }
         }
         catch (Exception e)

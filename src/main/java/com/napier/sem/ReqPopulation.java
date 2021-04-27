@@ -52,7 +52,7 @@ public class ReqPopulation {
 
             switch(req){
                 case Basic:
-                        strSelect = "SELECT country.Name, SUM(country.Population) as CountryPopulation, SUM(city.Population) AS CityPopulation " +
+                        strSelect = "SELECT country.Name, SUM(country.Population) AS CountryPopulation, SUM(city.Population) AS CityPopulation " +
                                 "ROUND(((SUM(city.Population)/SUM(country.Population))*100),2) AS InCityPercentage, " +
                                 "SUM(country.Population) - SUM(city.Population) AS NotCity, " +
                                 "ROUND(((SUM(country.Population) - SUM(city.Population))/SUM(country.Population)*100),2) AS NotCityPercentage " +
@@ -65,7 +65,7 @@ public class ReqPopulation {
 
             break;
                 case Region:
-                        strSelect = "SELECT country.Region, SUM(country.Population) as RegionPopulation, SUM(city.Population) AS CityPopulation, " +
+                        strSelect = "SELECT country.Region, SUM(country.Population) AS RegionPopulation, SUM(city.Population) AS CityPopulation, " +
                                 "ROUND(((SUM(city.Population)/SUM(country.Population))*100),2) AS InCityPercentage, " +
                                 "SUM(country.Population) - SUM(city.Population) AS NotCity, " +
                                 "ROUND(((SUM(country.Population) - SUM(city.Population))/SUM(country.Population)*100),2) AS NotCityPercentage " +
@@ -75,7 +75,7 @@ public class ReqPopulation {
 
             break;
                 case Continent:
-                        strSelect = "SELECT country.Continent, SUM(country.Population) as ContinentPopulation, SUM(city.Population) AS CityPopulation, " +
+                        strSelect = "SELECT country.Continent, SUM(country.Population) AS ContinentPopulation, SUM(city.Population) AS CityPopulation, " +
                                 "ROUND(((SUM(city.Population)/SUM(country.Population))*100),2) AS InCityPercentage, " +
                                 "SUM(country.Population) - SUM(city.Population) AS NotCity, " +
                                 "ROUND(((SUM(country.Population) - SUM(city.Population))/SUM(country.Population)*100),2) AS NotCityPercentage " +

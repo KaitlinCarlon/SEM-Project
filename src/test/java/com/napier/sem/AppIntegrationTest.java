@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
+import java.time.format.TextStyle;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppIntegrationTest
@@ -213,6 +215,72 @@ public class AppIntegrationTest
         a.totalPop(Location.City);
         long g = (long) a.Ritorna();
         assertEquals(440900, g);
+    }
+    @Test
+    void getPopulation() {
+        /**
+         * Country Population:
+         *  Aruba
+         *  CountryPop  103000
+         *  cityPop 29034
+         *  InCityPercentage 28.19
+         *  NotCity  73966
+         *  NotCityPercentage 71.81
+         */
+        /**
+         * Region Population:
+         * Polynesia
+         * regionPop  936050
+         * CityPop 135925
+         * inCityPerce 14.52
+         * notCity 800125
+         * NotCityPercentage 85.48
+         */
+        /**
+         * Continent Population:
+         * Oceania
+         * continentPop
+         * 307500750
+         * cityPop 13886149
+         * inCityPerce 4.52
+         * notCity 293614601
+         * NotCityPercentage 95.48
+         */
+
+        ReqPopulation pop = new ReqPopulation(app);
+        //Basic
+        pop.PopulationReport(Location.Basic);
+        Population basic = pop.Ritorna();
+        //Assert Basic
+        assertEquals(basic.Country_name(), "Aruba");
+        assertEquals(basic.Country_population(), "103000");
+        assertEquals(basic.City_pop(), "29034");
+        assertEquals(basic.NotCity_population(), "73966");
+        assertEquals(basic.CityPercentage(),"28.19 ");
+        assertEquals(basic.NotCityPercentage(),"71.81");
+
+        //Region
+        pop.PopulationReport(Location.Region);
+        Population Region = pop.Ritorna();
+        //Assert Region
+        assertEquals(Region.RegionName(), "Polynesia");
+        assertEquals(Region.Region_population(), "936050");
+        assertEquals(Region.City_pop(), "135925");
+        assertEquals(Region.NotCity_population(), "2800125");
+        assertEquals(Region.CityPercentage(),"14.52");
+        assertEquals(Region.NotCityPercentage(),"71.81");
+
+        //Continent
+        pop.PopulationReport(Location.Continent);
+        Population Continent = pop.Ritorna();
+        //Assert Continent
+        assertEquals(Continent.Country_continent(), "Oceania");
+        assertEquals(Continent.Continent_population(), "307500750");
+        assertEquals(Region.City_pop(), "13886149");
+        assertEquals(Region.NotCity_population(), "293614601");
+        assertEquals(Region.CityPercentage(),"4.52");
+        assertEquals(Region.NotCityPercentage(),"95.48");
+
     }
 
     @AfterAll

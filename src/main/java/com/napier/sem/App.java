@@ -1,5 +1,7 @@
 package com.napier.sem;
 
+import sun.awt.geom.AreaOp;
+
 import static java.lang.System.*;
 
 /**
@@ -48,6 +50,7 @@ public class App
     ReqLanguage linguaggio = new ReqLanguage(a);
     //Capital City Report
     ReqCapitalCity capCity = new ReqCapitalCity(a);
+    ReqPopulation pop = new ReqPopulation(a);
 
 
     public static void main(String[] args)
@@ -143,6 +146,21 @@ public class App
         a.capCity.capitalCityReport(Location.Region,0);
         out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Region,1);
+
+        /**
+         * //Population
+         *         out.println("Population and Percentage of people living in cities and outside them \n" );
+         *         out.println("Country Population \n");
+         *         out.println( "Full List \n" );
+         *         a.pop.PopulationReport(Location.Basic);
+         *         out.println("Region Population \n");
+         *         out.println( "Full List \n" );
+         *         a.pop.PopulationReport(Location.Region);
+         *         out.println("Continent Population \n");
+         *         out.println( "Full List \n" );
+         *         a.pop.PopulationReport(Location.Continent);
+         */
+
 
         // Disconnect from database
         a.a.disconnect();

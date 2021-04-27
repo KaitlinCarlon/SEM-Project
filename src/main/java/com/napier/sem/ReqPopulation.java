@@ -52,7 +52,7 @@ public class ReqPopulation {
 
             switch(req){
                 case Basic:
-                        strSelect = "SELECT country.Name, SUM(country.Population) AS CountryPopulation, SUM(city.Population) AS CityPopulation " +
+                        strSelect = "SELECT country.Name, SUM(country.Population) AS CountryPopulation, SUM(city.Population) AS CityPopulation, " +
                                 "ROUND(((SUM(city.Population)/SUM(country.Population))*100),2) AS InCityPercentage, " +
                                 "SUM(country.Population) - SUM(city.Population) AS NotCity, " +
                                 "ROUND(((SUM(country.Population) - SUM(city.Population))/SUM(country.Population)*100),2) AS NotCityPercentage " +

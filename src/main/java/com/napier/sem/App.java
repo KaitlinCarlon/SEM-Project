@@ -1,23 +1,24 @@
 package com.napier.sem;
 
+
 import static java.lang.System.*;
 
 /**
  * Release 1.0.2.1
-    -This is the Main App which connect to the World Database
-    -This is a sample connection to be used as reference for the next issues
-    -Divided into this methods:
-      Connect : for the connection to the database
-      Disconnect : to drop the communication whit the database
-      getCity: which consent to retrieve the data from the World Database
-      displayCity: print the result of the method getCity in the terminal
-      main: execution of the methods to be compiled
+ -This is the Main App which connect to the World Database
+ -This is a sample connection to be used as reference for the next issues
+ -Divided into this methods:
+ Connect : for the connection to the database
+ Disconnect : to drop the communication whit the database
+ getCity: which consent to retrieve the data from the World Database
+ displayCity: print the result of the method getCity in the terminal
+ main: execution of the methods to be compiled
  * Release 1.0.3.1
-   Development Update:
-   -Introduction of a new Class for the connection to the Database: DataConnect
-   -Encapsulation for the retrieve data for the requirements 1 to 16
-   -Modification of the public variables to private for the City and Country Variables Class ( Accessor )
-   -Test unit Implementation
+ Development Update:
+ -Introduction of a new Class for the connection to the Database: DataConnect
+ -Encapsulation for the retrieve data for the requirements 1 to 16
+ -Modification of the public variables to private for the City and Country Variables Class ( Accessor )
+ -Test unit Implementation
 
  @author (Giovanmaria Scanu)
  */
@@ -48,6 +49,7 @@ public class App
     ReqLanguage linguaggio = new ReqLanguage(a);
     //Capital City Report
     ReqCapitalCity capCity = new ReqCapitalCity(a);
+    ReqPopulation pop = new ReqPopulation(a);
 
 
     public static void main(String[] args)
@@ -60,6 +62,7 @@ public class App
         //a.a.connect();
         //Integration Testing
         a.a.connect("localhost:33060");
+
 
         // Get Data
         //Country Reports
@@ -143,6 +146,19 @@ public class App
         a.capCity.capitalCityReport(Location.Region,0);
         out.println( "Limit 1 \n" );
         a.capCity.capitalCityReport(Location.Region,1);
+
+
+        out.println("Population and Percentage of people living in cities and outside them \n" );
+        out.println("Country Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Basic);
+        out.println("Region Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Region);
+        out.println("Continent Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Continent);
+
 
         // Disconnect from database
         a.a.disconnect();

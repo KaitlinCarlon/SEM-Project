@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
+import java.time.format.TextStyle;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppIntegrationTest
@@ -213,6 +215,53 @@ public class AppIntegrationTest
         a.totalPop(Location.City);
         long g = (long) a.Ritorna();
         assertEquals(440900, g);
+    }
+    @Test
+    void getPopulation() {
+        /**
+         *  Palestine 18606000 902360 17703640 4.85 95.15
+         */
+
+        ReqPopulation pop = new ReqPopulation(app);
+        //Basic
+        pop.PopulationReport(Location.Basic);
+        Population basic = pop.Ritorna();
+        //Assert Basic
+        assertEquals(basic.Country_name(), "Palestine");
+        assertEquals(basic.Country_population(), 18606000);
+        assertEquals(basic.City_pop(), 902360);
+        assertEquals(basic.NotCity_population(), 17703640);
+        assertEquals(basic.CityPercentage(),4.85f);
+        assertEquals(basic.NotCityPercentage(),95.15f);
+
+        /**
+         * Baltic Countries 28643500 2947140 25696360 10.29 89.71
+         */
+        //Region
+        pop.PopulationReport(Location.Region);
+        Population Region = pop.Ritorna();
+        //Assert Region
+        assertEquals(Region.Region_name(), "Baltic Countries");
+        assertEquals(Region.Region_population(), 28643500);
+        assertEquals(Region.City_pop(), 2947140);
+        assertEquals(Region.NotCity_population(), 25696360);
+        assertEquals(Region.CityPercentage(),10.29f);
+        assertEquals(Region.NotCityPercentage(),89.71f);
+
+        /**
+         * South America 48533025000 172037859 48360987141 0.35 99.65
+         */
+        //Continent
+        pop.PopulationReport(Location.Continent);
+        Population Continent = pop.Ritorna();
+        //Assert Continent
+        assertEquals(Continent.Continent_name(), "South America");
+        assertEquals(Continent.Continent_population(), 48533025000l);
+        assertEquals(Continent.City_pop(), 172037859);
+        assertEquals(Continent.NotCity_population(), 48360987141l);
+        assertEquals(Continent.CityPercentage(),0.35f);
+        assertEquals(Continent.NotCityPercentage(),99.65f);
+
     }
 
     @AfterAll

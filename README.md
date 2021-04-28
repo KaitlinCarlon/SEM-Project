@@ -39,9 +39,9 @@ Scrum Master: Matthew Skilling
 | 20 | List Top N populated capital cities in the world. (N) defined by user.                                                   | Yes | ![](Screen/Req17&20.png) |
 | 21 | List Top N populated capital cities in a continet. (N) defined by user.                                                  | Yes | ![](Screen/Req18&21.png) |
 | 22 | List Top N populated capital cities in a region. (N) defined by user.                                                    | Yes | ![](Screen/Req19&22.png) |
-| 23 | List the population of people, people living in cities, and people not living in cities in each continent.               | No  |     |
-| 24 | List the population of people, people living in cities, and people not living in cities in each region.                  | No  |     |
-| 25 | List the population of people, people living in cities, and people not living in cities in each country.                 | No  |     |
+| 23 | List the population of people, people living in cities, and people not living in cities in each continent.               | Yes | ![](Screen/Req23.png)    |
+| 24 | List the population of people, people living in cities, and people not living in cities in each region.                  | Yes | ![](Screen/Req24.png)    |
+| 25 | List the population of people, people living in cities, and people not living in cities in each country.                 | Yes | ![](Screen/Req25.png)    |
 
 
 - Master Build Status  

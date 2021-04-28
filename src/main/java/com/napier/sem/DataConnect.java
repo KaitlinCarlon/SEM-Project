@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import static java.lang.System.*;
+
 /**
  * This Class has been separated to encapsulate and deal with the connection to the database
  * for and easy and efficient utilization in the main and secondary code.
@@ -40,14 +42,14 @@ public class DataConnect {
         }
         catch (ClassNotFoundException e)
         {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
+            out.println("Could not load SQL driver");
+            exit(-1);
         }
 
         int retries = 10;
         for (int i = 0; i < retries; ++i)
         {
-            System.out.println("Connecting to database...");
+            out.println("Connecting to database...");
             try
             {
                 // Wait a bit for db to start
@@ -59,17 +61,17 @@ public class DataConnect {
                 //Integration Testing
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "group9");
 
-                System.out.println("Successfully connected");
+                out.println("Successfully connected");
                 break;
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                System.out.println(sqle.getMessage());
+                out.println("Failed to connect to database attempt " + Integer.toString(i));
+                out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
             {
-                System.out.println("Thread interrupted? Should not happen.");
+                out.println("Thread interrupted? Should not happen.");
             }
         }
     }
@@ -88,7 +90,7 @@ public class DataConnect {
             }
             catch (Exception e)
             {
-                System.out.println("Error closing connection to database");
+                out.println("Error closing connection to database");
             }
         }
     }

@@ -1,37 +1,55 @@
 package com.napier.sem;
 
+
+import static java.lang.System.*;
+
 /**
  * Release 1.0.2.1
-    -This is the Main App which connect to the World Database
-    -This is a sample connection to be used as reference for the next issues
-    -Divided into this methods:
-      Connect : for the connection to the database
-      Disconnect : to drop the communication whit the database
-      getCity: which consent to retrieve the data from the World Database
-      displayCity: print the result of the method getCity in the terminal
-      main: execution of the methods to be compiled
+ -This is the Main App which connect to the World Database
+ -This is a sample connection to be used as reference for the next issues
+ -Divided into this methods:
+ Connect : for the connection to the database
+ Disconnect : to drop the communication whit the database
+ getCity: which consent to retrieve the data from the World Database
+ displayCity: print the result of the method getCity in the terminal
+ main: execution of the methods to be compiled
  * Release 1.0.3.1
-   Development Update:
-   -Introduction of a new Class for the connection to the Database: DataConnect
-   -Encapsulation for the retrieve data for the requirements 1 to 16
-   -Modification of the public variables to private for the City and Country Variables Class ( Accessor )
-   -Test unit Implementation
+ Development Update:
+ -Introduction of a new Class for the connection to the Database: DataConnect
+ -Encapsulation for the retrieve data for the requirements 1 to 16
+ -Modification of the public variables to private for the City and Country Variables Class ( Accessor )
+ -Test unit Implementation
 
  @author (Giovanmaria Scanu)
  */
 
+
+enum Location {
+    Basic,
+    Continent,
+    Region,
+    Country,
+    District,
+    City
+}
+
 public class App
 {
 
+    //Create a connection
     DataConnect a = new DataConnect();
-    Req1 first = new Req1(a);
-    Req2 second = new Req2(a);
-    Req3 third = new Req3(a);   
-    Req7 seven = new Req7(a);
-    Req8 eight = new Req8(a);
-    Req9 nine = new Req9(a);
-    Req10 ten = new Req10(a);
-    Req11 eleven = new Req11(a);
+    Location cityEnum;
+    //Country Report
+    ReqCountry country = new ReqCountry(a);
+    //City Report
+    ReqCity city = new ReqCity(a);
+    //Extra Population
+    ExtraPopReq total = new ExtraPopReq(a);
+    //Language
+    ReqLanguage linguaggio = new ReqLanguage(a);
+    //Capital City Report
+    ReqCapitalCity capCity = new ReqCapitalCity(a);
+    ReqPopulation pop = new ReqPopulation(a);
 
 
     public static void main(String[] args)
@@ -45,24 +63,101 @@ public class App
         //Integration Testing
         a.a.connect("localhost:33060");
 
-        // Get Data
 
-        a.first.countryReport(0);
-        a.first.countryReport(3);
-        a.second.countryReport(0);
-        a.second.countryReport(3);
-        a.third.countryReport(0);
-        a.third.countryReport(3);
-        a.seven.cityReport(0);
-        a.seven.cityReport(3);
-        a.eight.cityReport(0);
-        a.eight.cityReport(3);
-        a.nine.cityReport(0);
-        a.nine.cityReport(3);
-        a.ten.cityReport(0);
-        a.ten.cityReport(3);
-        a.eleven.cityReport(0);
-        a.eleven.cityReport(3);
+        // Get Data
+        //Country Reports
+        out.println( "Country Report \n" );
+        out.println( "Full List \n" );
+        a.country.countryReport(Location.Basic, 0 );
+        out.println( "Limit 1 \n" );
+        a.country.countryReport(Location.Basic, 1 );
+        out.println( "Continent: North America \n" );
+        out.println( "Full List \n" );
+        a.country.countryReport(Location.Continent, 0);
+        out.println( "Limit 1 \n" );
+        a.country.countryReport(Location.Continent, 1);
+        out.println( "Region: Caribbean\n" );
+        out.println( "Full List \n" );
+        a.country.countryReport(Location.Region, 0 );
+        out.println( "Limit 1 \n" );
+        a.country.countryReport(Location.Region, 1 );
+
+        //City Reports
+        out.println( "City Report \n" );
+        out.println( "Full List \n" );
+        a.city.cityReport(Location.Basic, 0 );
+        out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.Basic, 1 );
+        out.println( "Continent: North America\n" );
+        out.println( "Full List \n" );
+        a.city.cityReport(Location.Continent, 0);
+        out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.Continent, 1 );
+        out.println( "Region: Caribbean\n" );
+        out.println( "Full List \n" );
+        a.city.cityReport(Location.Region, 0 );
+        out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.Region, 1 );
+        out.println( "Country: AFG\n" );
+        out.println( "Full List \n" );
+        a.city.cityReport(Location.Country, 0 );
+        out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.Country,  1);
+        out.println( "District: Buenos Aires\n" );
+        out.println( "Full List \n" );
+        a.city.cityReport(Location.District, 0 );
+        out.println( "Limit 1 \n" );
+        a.city.cityReport(Location.District, 1 );
+
+
+        //Extra Population Request
+        out.println( "Extra Population Report \n" );
+        out.println( "Full List \n" );
+        a.total.totalPop(Location.Basic);
+        out.println( "Continent: Asia\n" );
+        a.total.totalPop(Location.Continent);
+        out.println( "Region : Caribbean\n" );
+        a.total.totalPop(Location.Region);
+        out.println( "Country: Argentina\n" );
+        a.total.totalPop(Location.Country);
+        out.println( "District: Utrecht\n" );
+        a.total.totalPop(Location.District);
+        out.println( "City Haag\n" );
+        a.total.totalPop(Location.City);
+        out.println( "\n" );
+
+        //Language
+        out.println( "Language and Percentage \n" );
+        a.linguaggio.Parlare();
+
+        //Capital City Reports
+        out.println( "Capital City \n" );
+        out.println( "Full List \n" );
+        a.capCity.capitalCityReport(Location.Basic,0);
+        out.println( "Limit 1 \n" );
+        a.capCity.capitalCityReport(Location.Basic,1);
+        out.println( "Continent: North America\n" );
+        out.println( "Full List \n" );
+        a.capCity.capitalCityReport(Location.Continent,0);
+        out.println( "Limit 1 \n" );
+        a.capCity.capitalCityReport(Location.Continent,1);
+        out.println( "Region: Caribbean\n" );
+        out.println( "Full List \n" );
+        a.capCity.capitalCityReport(Location.Region,0);
+        out.println( "Limit 1 \n" );
+        a.capCity.capitalCityReport(Location.Region,1);
+
+
+        out.println("Population and Percentage of people living in cities and outside them \n" );
+        out.println("Country Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Basic);
+        out.println("Region Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Region);
+        out.println("Continent Population \n");
+        out.println( "Full List \n" );
+        a.pop.PopulationReport(Location.Continent);
 
 
         // Disconnect from database

@@ -6,21 +6,21 @@ public class Population {
      */
 
     //Country Name
-    private String country_name;
+    private String country;
     //continent name
-    private String country_continent;
+    private String continent;
     //Country region name
     private String region;
     //Country Population
-    private int country_population;
+    private long country_population;
     //region Population
-    private int region_population;
+    private long region_population;
     //continent population
-    private int continent_population;
+    private long continent_population;
     //living in City population
-    private int city_population;
+    private long city_population;
     //living outside of city population
-    private int notCity_population;
+    private long notCity_population;
     //percentage in city
     private float cityPercentage;
     //percentage notCity
@@ -30,9 +30,9 @@ public class Population {
      * Init
      */
 
-    Population (String countryName, String continentName, String regionName, int countryPop, int regionPop, int continentPop, int cityPop, int notCityPop, float cityPerc, float notCityPerc){
-        this.country_name = countryName;
-        this.country_continent = continentName;
+    Population (String countryName, String continentName, String regionName, long countryPop, long regionPop, long continentPop, long cityPop, long notCityPop, float cityPerc, float notCityPerc){
+        this.country = countryName;
+        this.continent = continentName;
         this.region = regionName;
         this.country_population = countryPop;
         this.region_population = regionPop;
@@ -48,19 +48,19 @@ public class Population {
      * Accessor : Getter
      */
     public String Country_name(){
-        return this.country_name;
+        return this.country;
     }
-    public String Country_continent() {return this.country_continent;}
-    public String RegionName() {return this.region;}
-    public int Country_population(){
+    public String Continent_name() {return this.continent;}
+    public String Region_name() {return this.region;}
+    public long Country_population(){
         return this.country_population;
     }
-    public int Region_population(){
+    public long Region_population(){
         return this.region_population;
     }
-    public int Continent_population() {return this.continent_population;}
-    public int City_pop() {return this.city_population;}
-    public int NotCity_population() {return this.notCity_population;}
+    public long Continent_population() {return this.continent_population;}
+    public long City_pop() {return this.city_population;}
+    public long NotCity_population() {return this.notCity_population;}
     public float CityPercentage() {return this.cityPercentage;}
     public float NotCityPercentage() {return this.notCityPercentage;}
 }

@@ -38,7 +38,7 @@ jobs:
         before_deploy:
           # Set up git user name and tag this commit
           - git config --local user.name "KaitlinCarlon"
-          - git config --local user.email "40484293@napier.ac.uk"
+          - git config --local user.email "40484293@live.napier.ac.uk"
           # Create temporary tag from date and Git log.
           - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
           # Set tag
